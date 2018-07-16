@@ -17,6 +17,7 @@
 		D754F05120FC69C200D654B7 /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D754F05020FC69C200D654B7 /* Search.storyboard */; };
 		D754F05320FC6AFC00D654B7 /* History.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D754F05220FC6AFC00D654B7 /* History.storyboard */; };
 		D754F05520FC6B1400D654B7 /* Account.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D754F05420FC6B1400D654B7 /* Account.storyboard */; };
+		DF6A632D05064BE601795971 /* Pods_Playlist.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB4AFCE1C11301035A8A9AB5 /* Pods_Playlist.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,6 +31,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2FFB1369D818152A9D47BAA5 /* Pods-Playlist.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Playlist.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Playlist/Pods-Playlist.debug.xcconfig"; sourceTree = "<group>"; };
+		BB4AFCE1C11301035A8A9AB5 /* Pods_Playlist.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Playlist.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BCE1ACC931492C66E1F95E6C /* Pods-Playlist.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Playlist.release.xcconfig"; path = "Pods/Target Support Files/Pods-Playlist/Pods-Playlist.release.xcconfig"; sourceTree = "<group>"; };
 		D714737720FC581700C63041 /* Playlist.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Playlist.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D714737A20FC581700C63041 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D714737F20FC581700C63041 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -51,6 +55,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DF6A632D05064BE601795971 /* Pods_Playlist.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -64,12 +69,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0F286F5DC6803DA91D17ECA3 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2FFB1369D818152A9D47BAA5 /* Pods-Playlist.debug.xcconfig */,
+				BCE1ACC931492C66E1F95E6C /* Pods-Playlist.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		92B86EDB6C95C09AED9925B7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BB4AFCE1C11301035A8A9AB5 /* Pods_Playlist.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		D714736E20FC581600C63041 = {
 			isa = PBXGroup;
 			children = (
 				D714737920FC581700C63041 /* Playlist */,
 				D714738E20FC581A00C63041 /* PlaylistTests */,
 				D714737820FC581700C63041 /* Products */,
+				0F286F5DC6803DA91D17ECA3 /* Pods */,
+				92B86EDB6C95C09AED9925B7 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -187,9 +211,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D714739420FC581B00C63041 /* Build configuration list for PBXNativeTarget "Playlist" */;
 			buildPhases = (
+				C3A1F1EA4DDA18601FBAF5CF /* [CP] Check Pods Manifest.lock */,
 				D714737320FC581700C63041 /* Sources */,
 				D714737420FC581700C63041 /* Frameworks */,
 				D714737520FC581700C63041 /* Resources */,
+				208FA349415DEA05E4010378 /* [CP] Embed Pods Frameworks */,
+				538B1FE6188E1B3870378BF4 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -279,6 +306,77 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		208FA349415DEA05E4010378 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Playlist/Pods-Playlist-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GTMOAuth2/GTMOAuth2.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+				"${BUILT_PRODUCTS_DIR}/youtube-ios-player-helper/youtube_ios_player_helper.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMOAuth2.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/youtube_ios_player_helper.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Playlist/Pods-Playlist-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		538B1FE6188E1B3870378BF4 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Playlist/Pods-Playlist-resources.sh",
+				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseUI/FirebaseAuthUI.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseUI/FirebaseGoogleAuthUI.bundle",
+				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FirebaseAuthUI.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FirebaseGoogleAuthUI.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleSignIn.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Playlist/Pods-Playlist-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C3A1F1EA4DDA18601FBAF5CF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Playlist-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		D714737320FC581700C63041 /* Sources */ = {
@@ -444,6 +542,7 @@
 		};
 		D714739520FC581B00C63041 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2FFB1369D818152A9D47BAA5 /* Pods-Playlist.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -465,6 +564,7 @@
 		};
 		D714739620FC581B00C63041 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BCE1ACC931492C66E1F95E6C /* Pods-Playlist.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
