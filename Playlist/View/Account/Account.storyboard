@@ -1,50 +1,120 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="fGC-mc-4M1">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Bq5-3J-hcu">
     <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Account-->
-        <scene sceneID="in6-PM-w3L">
+        <scene sceneID="Zk4-kd-6mL">
             <objects>
-                <navigationController id="fGC-mc-4M1" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Account" id="zuH-R2-WVI"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="8e3-5v-b2b">
-                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="CHQ-bJ-jIg">
-                        <autoresizingMask key="autoresizingMask"/>
-                    </toolbar>
-                    <connections>
-                        <segue destination="lFb-lJ-Nr0" kind="relationship" relationship="rootViewController" id="miZ-1Q-8No"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="vuc-gu-8jQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="316" y="1992"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="xGn-G1-z31">
-            <objects>
-                <viewController id="lFb-lJ-Nr0" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="OFf-Qp-quk">
+                <tableViewController id="Bq5-3J-hcu" customClass="AccountTableViewController" customModule="Playlist" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="ftd-Ub-SJd">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="KWs-lI-Hw1"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="rDV-p8-M6H"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="XqF-Iw-QpO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                        <color key="separatorColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="title cell" id="iyd-J5-5mM">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="iyd-J5-5mM" id="hyV-lf-CBZ">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.666666666666664"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="내정보" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BDl-wO-P3Q">
+                                            <rect key="frame" x="16" y="16" width="343" height="11.666666666666664"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
+                                            <color key="textColor" red="0.90980392160000001" green="0.38431372549999998" blue="0.55294117649999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="BDl-wO-P3Q" firstAttribute="top" secondItem="hyV-lf-CBZ" secondAttribute="top" constant="16" id="52G-Br-giA"/>
+                                        <constraint firstAttribute="trailing" secondItem="BDl-wO-P3Q" secondAttribute="trailing" constant="16" id="QAj-pm-a8K"/>
+                                        <constraint firstAttribute="bottom" secondItem="BDl-wO-P3Q" secondAttribute="bottom" constant="16" id="Vot-cN-Z2n"/>
+                                        <constraint firstItem="BDl-wO-P3Q" firstAttribute="leading" secondItem="hyV-lf-CBZ" secondAttribute="leading" constant="16" id="k2h-2P-nBI"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="login cell" id="yQz-Jm-ar8" customClass="LoginTableViewCell" customModule="Playlist" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="72" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="yQz-Jm-ar8" id="uav-HF-oAP">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.666666666666664"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="n8G-6K-vc6">
+                                            <rect key="frame" x="16" y="16" width="343" height="11.666666666666664"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Nhr-V9-tz7">
+                                                    <rect key="frame" x="0.0" y="0.0" width="296.66666666666669" height="11.666666666666666"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="게스트 모드" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pfa-wS-9pM">
+                                                            <rect key="frame" x="0.0" y="0.0" width="296.66666666666669" height="6"/>
+                                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="26"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="로그인으로 사용 기록을 안전하게 저장하세요" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y2t-D3-j1M">
+                                                            <rect key="frame" x="0.0" y="6" width="296.66666666666669" height="5.6666666666666679"/>
+                                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                                            <color key="textColor" red="0.90980392156862744" green="0.3843137254901961" blue="0.55294117647058827" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DGV-uh-adB">
+                                                    <rect key="frame" x="296.66666666666669" y="0.0" width="46.333333333333314" height="11.666666666666666"/>
+                                                    <state key="normal">
+                                                        <attributedString key="attributedTitle">
+                                                            <fragment content="로그인">
+                                                                <attributes>
+                                                                    <color key="NSColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    <font key="NSFont" size="17" name=".AppleSDGothicNeoI-Regular"/>
+                                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                                    <integer key="NSUnderline" value="1"/>
+                                                                </attributes>
+                                                            </fragment>
+                                                        </attributedString>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="pressLoginButton:" destination="yQz-Jm-ar8" eventType="touchUpInside" id="XHU-eD-0cM"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                        </stackView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="n8G-6K-vc6" firstAttribute="leading" secondItem="uav-HF-oAP" secondAttribute="leading" constant="16" id="LxS-nn-np4"/>
+                                        <constraint firstItem="n8G-6K-vc6" firstAttribute="top" secondItem="uav-HF-oAP" secondAttribute="top" constant="16" id="RGT-sL-gDe"/>
+                                        <constraint firstAttribute="trailing" secondItem="n8G-6K-vc6" secondAttribute="trailing" constant="16" id="lde-W5-Mlg"/>
+                                        <constraint firstAttribute="bottom" secondItem="n8G-6K-vc6" secondAttribute="bottom" constant="16" id="qeG-RW-HpK"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="descriptionLabel" destination="y2t-D3-j1M" id="Pp2-b1-kHf"/>
+                                    <outlet property="loginButton" destination="DGV-uh-adB" id="70H-f4-BKI"/>
+                                    <outlet property="loginModeLabel" destination="pfa-wS-9pM" id="6Az-uI-6Ax"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Bq5-3J-hcu" id="Flr-K5-FEH"/>
+                            <outlet property="delegate" destination="Bq5-3J-hcu" id="0mk-bM-8YF"/>
+                        </connections>
+                    </tableView>
+                    <tabBarItem key="tabBarItem" title="Account" id="ysb-q3-ABv"/>
+                    <navigationItem key="navigationItem" id="Szc-dF-YYf"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ru3-El-jKd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1294" y="1993"/>
+            <point key="canvasLocation" x="1434" y="1991"/>
         </scene>
     </scenes>
 </document>
