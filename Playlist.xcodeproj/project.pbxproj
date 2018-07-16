@@ -107,10 +107,10 @@
 		D714739A20FC5AF900C63041 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				D754F05420FC6B1400D654B7 /* Account.storyboard */,
-				D754F05220FC6AFC00D654B7 /* History.storyboard */,
-				D754F05020FC69C200D654B7 /* Search.storyboard */,
-				D754F04E20FC687300D654B7 /* Home.storyboard */,
+				D8706E9220FC6D5200D553D2 /* Account */,
+				D8706E9320FC6D5D00D553D2 /* History */,
+				D8706E9420FC6D6700D553D2 /* Search */,
+				D8706E9520FC6D6D00D553D2 /* Home */,
 				D714737E20FC581700C63041 /* Main.storyboard */,
 				D754F04720FC631800D654B7 /* HomeViewController.swift */,
 			);
@@ -146,6 +146,38 @@
 				D714738320FC581A00C63041 /* LaunchScreen.storyboard */,
 			);
 			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D8706E9220FC6D5200D553D2 /* Account */ = {
+			isa = PBXGroup;
+			children = (
+				D754F05420FC6B1400D654B7 /* Account.storyboard */,
+			);
+			path = Account;
+			sourceTree = "<group>";
+		};
+		D8706E9320FC6D5D00D553D2 /* History */ = {
+			isa = PBXGroup;
+			children = (
+				D754F05220FC6AFC00D654B7 /* History.storyboard */,
+			);
+			path = History;
+			sourceTree = "<group>";
+		};
+		D8706E9420FC6D6700D553D2 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				D754F05020FC69C200D654B7 /* Search.storyboard */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		D8706E9520FC6D6D00D553D2 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				D754F04E20FC687300D654B7 /* Home.storyboard */,
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
