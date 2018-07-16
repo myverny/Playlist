@@ -24,6 +24,7 @@
 		D8706EA720FC99A700D553D2 /* SearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8706EA620FC99A700D553D2 /* SearchTableViewController.swift */; };
 		D8706EA920FC9A5200D553D2 /* SearchResultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8706EA820FC9A5200D553D2 /* SearchResultTableViewCell.swift */; };
 		DF6A632D05064BE601795971 /* Pods_Playlist.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB4AFCE1C11301035A8A9AB5 /* Pods_Playlist.framework */; };
+		D754F05820FC6F9900D654B7 /* home.json in Resources */ = {isa = PBXBuildFile; fileRef = D754F05720FC6F9900D654B7 /* home.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +61,7 @@
 		D8706EA420FC87EE00D553D2 /* LoginTableViewCellDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginTableViewCellDelegate.swift; sourceTree = "<group>"; };
 		D8706EA620FC99A700D553D2 /* SearchTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewController.swift; sourceTree = "<group>"; };
 		D8706EA820FC9A5200D553D2 /* SearchResultTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultTableViewCell.swift; sourceTree = "<group>"; };
+		D754F05720FC6F9900D654B7 /* home.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = home.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +123,7 @@
 		D714737920FC581700C63041 /* Playlist */ = {
 			isa = PBXGroup;
 			children = (
+				D754F05620FC6F6700D654B7 /* Resource */,
 				D714739D20FC5B1900C63041 /* Service */,
 				D714739C20FC5B0B00C63041 /* Model */,
 				D714739B20FC5B0200C63041 /* ViewModel */,
@@ -173,6 +176,14 @@
 			children = (
 			);
 			path = Service;
+			sourceTree = "<group>";
+		};
+		D754F05620FC6F6700D654B7 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				D754F05720FC6F9900D654B7 /* home.json */,
+			);
+			path = Resource;
 			sourceTree = "<group>";
 		};
 		D8706E8F20FC5FEE00D553D2 /* Supporting Files */ = {
@@ -309,6 +320,7 @@
 				D714738520FC581A00C63041 /* LaunchScreen.storyboard in Resources */,
 				D8706E9920FC717900D553D2 /* GoogleService-Info.plist in Resources */,
 				D714738220FC581A00C63041 /* Assets.xcassets in Resources */,
+				D754F05820FC6F9900D654B7 /* home.json in Resources */,
 				D714738020FC581700C63041 /* Main.storyboard in Resources */,
 				D754F04F20FC687300D654B7 /* Home.storyboard in Resources */,
 				D754F05120FC69C200D654B7 /* Search.storyboard in Resources */,
