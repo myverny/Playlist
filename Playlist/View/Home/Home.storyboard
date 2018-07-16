@@ -37,13 +37,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="G18-xf-Ke3">
-                                <rect key="frame" x="67" y="215" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="G18-xf-Ke3">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="G18-xf-Ke3" firstAttribute="leading" secondItem="ZBD-2A-sOW" secondAttribute="leading" id="CKX-Gk-Yx7"/>
+                            <constraint firstItem="ZBD-2A-sOW" firstAttribute="bottom" secondItem="G18-xf-Ke3" secondAttribute="bottom" id="ReP-Mh-tdM"/>
+                            <constraint firstItem="ZBD-2A-sOW" firstAttribute="trailing" secondItem="G18-xf-Ke3" secondAttribute="trailing" id="XOV-LX-wBz"/>
+                            <constraint firstItem="G18-xf-Ke3" firstAttribute="top" secondItem="ZBD-2A-sOW" secondAttribute="top" id="gsp-ec-OsM"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="ZBD-2A-sOW"/>
                     </view>
                     <navigationItem key="navigationItem" id="QmH-DN-idH"/>

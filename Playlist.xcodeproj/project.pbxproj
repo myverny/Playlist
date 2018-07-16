@@ -17,6 +17,7 @@
 		D754F05120FC69C200D654B7 /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D754F05020FC69C200D654B7 /* Search.storyboard */; };
 		D754F05320FC6AFC00D654B7 /* History.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D754F05220FC6AFC00D654B7 /* History.storyboard */; };
 		D754F05520FC6B1400D654B7 /* Account.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D754F05420FC6B1400D654B7 /* Account.storyboard */; };
+		D754F05820FC6F9900D654B7 /* home.json in Resources */ = {isa = PBXBuildFile; fileRef = D754F05720FC6F9900D654B7 /* home.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,7 @@
 		D754F05020FC69C200D654B7 /* Search.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Search.storyboard; sourceTree = "<group>"; };
 		D754F05220FC6AFC00D654B7 /* History.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = History.storyboard; sourceTree = "<group>"; };
 		D754F05420FC6B1400D654B7 /* Account.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Account.storyboard; sourceTree = "<group>"; };
+		D754F05720FC6F9900D654B7 /* home.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = home.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +87,7 @@
 		D714737920FC581700C63041 /* Playlist */ = {
 			isa = PBXGroup;
 			children = (
+				D754F05620FC6F6700D654B7 /* Resource */,
 				D714739D20FC5B1900C63041 /* Service */,
 				D714739C20FC5B0B00C63041 /* Model */,
 				D714739B20FC5B0200C63041 /* ViewModel */,
@@ -136,6 +139,14 @@
 			children = (
 			);
 			path = Service;
+			sourceTree = "<group>";
+		};
+		D754F05620FC6F6700D654B7 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				D754F05720FC6F9900D654B7 /* home.json */,
+			);
+			path = Resource;
 			sourceTree = "<group>";
 		};
 		D8706E8F20FC5FEE00D553D2 /* Supporting Files */ = {
@@ -263,6 +274,7 @@
 			files = (
 				D714738520FC581A00C63041 /* LaunchScreen.storyboard in Resources */,
 				D714738220FC581A00C63041 /* Assets.xcassets in Resources */,
+				D754F05820FC6F9900D654B7 /* home.json in Resources */,
 				D714738020FC581700C63041 /* Main.storyboard in Resources */,
 				D754F04F20FC687300D654B7 /* Home.storyboard in Resources */,
 				D754F05120FC69C200D654B7 /* Search.storyboard in Resources */,
