@@ -17,6 +17,7 @@
 		D754F05120FC69C200D654B7 /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D754F05020FC69C200D654B7 /* Search.storyboard */; };
 		D754F05320FC6AFC00D654B7 /* History.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D754F05220FC6AFC00D654B7 /* History.storyboard */; };
 		D754F05520FC6B1400D654B7 /* Account.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D754F05420FC6B1400D654B7 /* Account.storyboard */; };
+		D8706E9920FC717900D553D2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D8706E9820FC717900D553D2 /* GoogleService-Info.plist */; };
 		DF6A632D05064BE601795971 /* Pods_Playlist.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB4AFCE1C11301035A8A9AB5 /* Pods_Playlist.framework */; };
 /* End PBXBuildFile section */
 
@@ -48,6 +49,7 @@
 		D754F05020FC69C200D654B7 /* Search.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Search.storyboard; sourceTree = "<group>"; };
 		D754F05220FC6AFC00D654B7 /* History.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = History.storyboard; sourceTree = "<group>"; };
 		D754F05420FC6B1400D654B7 /* Account.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Account.storyboard; sourceTree = "<group>"; };
+		D8706E9820FC717900D553D2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +117,7 @@
 				D714739A20FC5AF900C63041 /* View */,
 				D8706E8F20FC5FEE00D553D2 /* Supporting Files */,
 				D714738620FC581A00C63041 /* Info.plist */,
+				D8706E9820FC717900D553D2 /* GoogleService-Info.plist */,
 			);
 			path = Playlist;
 			sourceTree = "<group>";
@@ -289,6 +292,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D714738520FC581A00C63041 /* LaunchScreen.storyboard in Resources */,
+				D8706E9920FC717900D553D2 /* GoogleService-Info.plist in Resources */,
 				D714738220FC581A00C63041 /* Assets.xcassets in Resources */,
 				D714738020FC581700C63041 /* Main.storyboard in Resources */,
 				D754F04F20FC687300D654B7 /* Home.storyboard in Resources */,
