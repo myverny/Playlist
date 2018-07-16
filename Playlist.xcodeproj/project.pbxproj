@@ -79,10 +79,8 @@
 				D714739C20FC5B0B00C63041 /* Model */,
 				D714739B20FC5B0200C63041 /* ViewModel */,
 				D714739A20FC5AF900C63041 /* View */,
-				D714737A20FC581700C63041 /* AppDelegate.swift */,
+				D8706E8F20FC5FEE00D553D2 /* Supporting Files */,
 				D714737E20FC581700C63041 /* Main.storyboard */,
-				D714738120FC581A00C63041 /* Assets.xcassets */,
-				D714738320FC581A00C63041 /* LaunchScreen.storyboard */,
 				D714738620FC581A00C63041 /* Info.plist */,
 			);
 			path = Playlist;
@@ -123,6 +121,16 @@
 			children = (
 			);
 			path = Service;
+			sourceTree = "<group>";
+		};
+		D8706E8F20FC5FEE00D553D2 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D714737A20FC581700C63041 /* AppDelegate.swift */,
+				D714738120FC581A00C63041 /* Assets.xcassets */,
+				D714738320FC581A00C63041 /* LaunchScreen.storyboard */,
+			);
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
