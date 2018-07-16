@@ -13,6 +13,10 @@
 		D714738520FC581A00C63041 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D714738320FC581A00C63041 /* LaunchScreen.storyboard */; };
 		D714739020FC581A00C63041 /* PlaylistTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D714738F20FC581A00C63041 /* PlaylistTests.swift */; };
 		D754F04820FC631800D654B7 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D754F04720FC631800D654B7 /* HomeViewController.swift */; };
+		D754F04F20FC687300D654B7 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D754F04E20FC687300D654B7 /* Home.storyboard */; };
+		D754F05120FC69C200D654B7 /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D754F05020FC69C200D654B7 /* Search.storyboard */; };
+		D754F05320FC6AFC00D654B7 /* History.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D754F05220FC6AFC00D654B7 /* History.storyboard */; };
+		D754F05520FC6B1400D654B7 /* Account.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D754F05420FC6B1400D654B7 /* Account.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +40,10 @@
 		D714738F20FC581A00C63041 /* PlaylistTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistTests.swift; sourceTree = "<group>"; };
 		D714739120FC581B00C63041 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D754F04720FC631800D654B7 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		D754F04E20FC687300D654B7 /* Home.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
+		D754F05020FC69C200D654B7 /* Search.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Search.storyboard; sourceTree = "<group>"; };
+		D754F05220FC6AFC00D654B7 /* History.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = History.storyboard; sourceTree = "<group>"; };
+		D754F05420FC6B1400D654B7 /* Account.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Account.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +107,10 @@
 		D714739A20FC5AF900C63041 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				D754F05420FC6B1400D654B7 /* Account.storyboard */,
+				D754F05220FC6AFC00D654B7 /* History.storyboard */,
+				D754F05020FC69C200D654B7 /* Search.storyboard */,
+				D754F04E20FC687300D654B7 /* Home.storyboard */,
 				D714737E20FC581700C63041 /* Main.storyboard */,
 				D754F04720FC631800D654B7 /* HomeViewController.swift */,
 			);
@@ -220,6 +232,10 @@
 				D714738520FC581A00C63041 /* LaunchScreen.storyboard in Resources */,
 				D714738220FC581A00C63041 /* Assets.xcassets in Resources */,
 				D714738020FC581700C63041 /* Main.storyboard in Resources */,
+				D754F04F20FC687300D654B7 /* Home.storyboard in Resources */,
+				D754F05120FC69C200D654B7 /* Search.storyboard in Resources */,
+				D754F05320FC6AFC00D654B7 /* History.storyboard in Resources */,
+				D754F05520FC6B1400D654B7 /* Account.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
