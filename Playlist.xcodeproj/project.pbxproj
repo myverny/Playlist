@@ -12,6 +12,7 @@
 		D714738220FC581A00C63041 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D714738120FC581A00C63041 /* Assets.xcassets */; };
 		D714738520FC581A00C63041 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D714738320FC581A00C63041 /* LaunchScreen.storyboard */; };
 		D714739020FC581A00C63041 /* PlaylistTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D714738F20FC581A00C63041 /* PlaylistTests.swift */; };
+		D754F04820FC631800D654B7 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D754F04720FC631800D654B7 /* HomeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +35,7 @@
 		D714738B20FC581A00C63041 /* PlaylistTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PlaylistTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D714738F20FC581A00C63041 /* PlaylistTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistTests.swift; sourceTree = "<group>"; };
 		D714739120FC581B00C63041 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D754F04720FC631800D654B7 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,7 +82,6 @@
 				D714739B20FC5B0200C63041 /* ViewModel */,
 				D714739A20FC5AF900C63041 /* View */,
 				D8706E8F20FC5FEE00D553D2 /* Supporting Files */,
-				D714737E20FC581700C63041 /* Main.storyboard */,
 				D714738620FC581A00C63041 /* Info.plist */,
 			);
 			path = Playlist;
@@ -98,6 +99,8 @@
 		D714739A20FC5AF900C63041 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				D714737E20FC581700C63041 /* Main.storyboard */,
+				D754F04720FC631800D654B7 /* HomeViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -235,6 +238,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D714737B20FC581700C63041 /* AppDelegate.swift in Sources */,
+				D754F04820FC631800D654B7 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -440,6 +444,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = M345Z8MN58;
 				INFOPLIST_FILE = PlaylistTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -461,6 +466,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = M345Z8MN58;
 				INFOPLIST_FILE = PlaylistTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
