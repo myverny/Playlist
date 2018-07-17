@@ -12,7 +12,7 @@ class SearchTagCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var tagButton: UIButton! {
         didSet {
-            tagButton.layer.cornerRadius = CGFloat(15.0)
+            tagButton.layer.cornerRadius = CGFloat(20.0)
             tagButton.layer.borderColor = #colorLiteral(red: 0.9098039216, green: 0.3843137255, blue: 0.5529411765, alpha: 1)
             tagButton.layer.borderWidth = CGFloat(1.0)
             tagButton.contentEdgeInsets = UIEdgeInsetsMake(10.0, 10.0, 10.0, 10.0)
