@@ -9,12 +9,17 @@
 import UIKit
 
 class HomeViewController: UIViewController {
-    
+    private let viewModel = HomeViewModel()
+
     @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        tableView?.dataSource = viewModel
+        tableView?.estimatedRowHeight = 100
+        tableView?.rowHeight = UITableViewAutomaticDimension
+        
+        tableView?.register(TodayTableViewCell.nib, forCellReuseIdentifier: TodayTableViewCell.identifier)
     }
 
     override func didReceiveMemoryWarning() {
