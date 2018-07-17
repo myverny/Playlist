@@ -11,8 +11,8 @@ import FirebaseUI
 
 class AccountTableViewController: UITableViewController, FUIAuthDelegate, LoginTableViewCellDelegate {
     
-    var authUI: FUIAuth!
-    var handle: AuthStateDidChangeListenerHandle?
+    private var authUI: FUIAuth!
+    private var handle: AuthStateDidChangeListenerHandle?
     
     override func viewDidLoad() {
         super.viewDidLoad()
