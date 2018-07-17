@@ -45,9 +45,9 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        if let flowLayout = tagCollectionView.collectionViewLayout as? UICollectionViewFlowLayout {
-            flowLayout.estimatedItemSize = CGSize(width: 1, height: 1)
-        }
+        let flowLayout = LeftAlignedCollectionViewFlowLayout()
+        flowLayout.estimatedItemSize = CGSize(width: 1, height: 1)
+        tagCollectionView.collectionViewLayout = flowLayout
     }
     
     override func viewWillAppear(_ animated: Bool) {

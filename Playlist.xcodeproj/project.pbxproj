@@ -19,6 +19,7 @@
 		D754F05520FC6B1400D654B7 /* Account.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D754F05420FC6B1400D654B7 /* Account.storyboard */; };
 		D754F05820FC6F9900D654B7 /* home.json in Resources */ = {isa = PBXBuildFile; fileRef = D754F05720FC6F9900D654B7 /* home.json */; };
 		D82F623A20FD8EB300044708 /* FirebaseConn.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82F623920FD8EB300044708 /* FirebaseConn.swift */; };
+		D82F623C20FDAD4E00044708 /* LeftAlignedCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82F623B20FDAD4E00044708 /* LeftAlignedCollectionViewFlowLayout.swift */; };
 		D8706E9920FC717900D553D2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D8706E9820FC717900D553D2 /* GoogleService-Info.plist */; };
 		D8706EA120FC84EA00D553D2 /* AccountTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8706EA020FC84EA00D553D2 /* AccountTableViewController.swift */; };
 		D8706EA320FC85C800D553D2 /* LoginTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8706EA220FC85C800D553D2 /* LoginTableViewCell.swift */; };
@@ -58,6 +59,7 @@
 		D754F05420FC6B1400D654B7 /* Account.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Account.storyboard; sourceTree = "<group>"; };
 		D754F05720FC6F9900D654B7 /* home.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = home.json; sourceTree = "<group>"; };
 		D82F623920FD8EB300044708 /* FirebaseConn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseConn.swift; sourceTree = "<group>"; };
+		D82F623B20FDAD4E00044708 /* LeftAlignedCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftAlignedCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
 		D8706E9820FC717900D553D2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D8706EA020FC84EA00D553D2 /* AccountTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountTableViewController.swift; sourceTree = "<group>"; };
 		D8706EA220FC85C800D553D2 /* LoginTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginTableViewCell.swift; sourceTree = "<group>"; };
@@ -224,6 +226,7 @@
 				D754F05020FC69C200D654B7 /* Search.storyboard */,
 				D8F9334620FCD2E90032696F /* SearchTagCollectionViewCell.swift */,
 				D8F9334820FCD49B0032696F /* SearchViewController.swift */,
+				D82F623B20FDAD4E00044708 /* LeftAlignedCollectionViewFlowLayout.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -419,6 +422,7 @@
 			files = (
 				D8706EA520FC87EE00D553D2 /* LoginTableViewCellDelegate.swift in Sources */,
 				D8F9334920FCD49B0032696F /* SearchViewController.swift in Sources */,
+				D82F623C20FDAD4E00044708 /* LeftAlignedCollectionViewFlowLayout.swift in Sources */,
 				D714737B20FC581700C63041 /* AppDelegate.swift in Sources */,
 				D754F04820FC631800D654B7 /* HomeViewController.swift in Sources */,
 				D82F623A20FD8EB300044708 /* FirebaseConn.swift in Sources */,
