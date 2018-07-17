@@ -1,79 +1,79 @@
 {
     "tags": {
         "0": {
-            "tag": "sports",
+            "name": "sports",
             "playlists": {
                 "0": true
             }
         },
         "1": {
-            "tag": "football",
+            "name": "football",
             "playlists": {
                 "0": true
             }
         },
         "2": {
-            "tag": "worldcup",
+            "name": "worldcup",
             "playlists": {
                 "0": true
             }
         },
         "3": {
-            "tag": "worldcup2018",
+            "name": "worldcup2018",
             "playlists": {
                 "0": true
             }
         },
         "4": {
-            "tag": "russia",
+            "name": "russia",
             "playlists": {
                 "0": true
             }
         },
         "5": {
-            "tag": "france",
+            "name": "france",
             "playlists": {
                 "0": true
             }
         },
         "6": {
-            "tag": "croatia",
+            "name": "croatia",
             "playlists": {
                 "0": true
             }
         },
         "7": {
-            "tag": "트와이스",
+            "name": "트와이스",
             "playlists": {
                 "1": true
             }
         },
         "8": {
-            "tag": "twice",
+            "name": "twice",
             "playlists": {
                 "1": true
             }
         },
         "9": {
-            "tag": "twicemusicvideo",
+            "name": "twicemusicvideo",
             "playlists": {
                 "1": true
             }
         },
         "10": {
-            "tag": "jyp",
+            "name": "jyp",
             "playlists": {
                 "1": true
             }
         },
         "11": {
-            "tag": "BTS",
+            "name": "BTS",
             "playlists": {
                 "2": true
             }
         },
         "12": {
-            "tag": "방탄소년단",
+            "name": "방탄소년단",
             "playlists": {
                 "2": true
             }

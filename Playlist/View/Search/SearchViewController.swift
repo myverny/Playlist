@@ -37,7 +37,7 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
         
         if let searchTagCell = cell as? SearchTagCollectionViewCell,
             let tagInfo = tags[indexPath.item] as? [String:Any],
-            let tagName = tagInfo["tag"] as? String {
+            let tagName = tagInfo["name"] as? String {
             searchTagCell.setTagName(as: tagName)
         }
         return cell
@@ -48,10 +48,6 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
         if let flowLayout = tagCollectionView.collectionViewLayout as? LeftAlignedCollectionViewFlowLayout {
             flowLayout.estimatedItemSize = CGSize(width: 1, height: 1)
         }
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
         firebaseConn = FirebaseConn()
         firebaseConn.getData(from: FirebaseConn.tagsPath) { data in
             if let tagSnapshot = data as? [Any] {
@@ -60,8 +56,4 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
         }
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-    }
-
 }
