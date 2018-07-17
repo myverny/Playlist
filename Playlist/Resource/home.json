@@ -1,64 +1,158 @@
 {
-    "today": [1, 2],
-    "rank": [1,2,3],
-    "topTags": [
-        "worldcup", "twice", "BTS"
-    ],
-    "playlists": [
-                  {
-                  "id": 1,
-                  "title": "Worldcup 2018 Final",
-                  "desc": "France v Croatia - 2018 FIFA World Cup™ FINAL",
-                  "views": 5123908,
-                  "saves": 2,
-                  "videos": [
-                             "g1xzP_IOcA8",
-                             "F1FuMq9ijRU",
-                             "1M2DtGqdMbI",
-                             "KncQch8pgao",
-                             "ILOFwBBcGv4",
-                             "BfJRfKxgmIE"
-                             ],
-                  "tags": [
-                           "sports", "football", "worldcup", "worldcup2018", "russia", "france", "croatia"
-                           ]
-                  },
-                  {
-                  "id": 2,
-                  "title": "Twice Music Videos",
-                  "desc": "트와이스 공식 뮤직비디오 모음입니다",
-                  "views": 53908,
-                  "saves": 22,
-                  "videos": [
-                             "Fm5iP0S1z9w",
-                             "i0p1bmr0EmE",
-                             "rRzxEiBLQCA",
-                             "V2hlQkVJZhE",
-                             "VQtonf1fv_s",
-                             "8A2t_tAjMz8"
-                             ],
-                  "tags": [
-                           "트와이스", "twice", "twicemusicvideo", "jyp"
-                           ]
-                  },
-                  {
-                  "id": 3,
-                  "title": "BTS Music Videos",
-                  "desc": "방탄소년단 뮤직비디오 모음입니다",
-                  "views": 11083,
-                  "saves": 35,
-                  "videos": [
-                             "rBG5L7UsUxA",
-                             "gqhWHy0rrtM",
-                             "mmgxPLLLyVo",
-                             "hmE9f-TEutc",
-                             "xEeFrLSkMm8",
-                             "9DwzBICPhdM"
-                             ],
-                  "tags": [
-                           "BTS", "방탄소년단"
-                           ]
-                  }
-                  ]
+    "tags": {
+        "0": {
+            "tag": "sports",
+            "playlists": {
+                "0": true
+            }
+        },
+        "1": {
+            "tag": "football",
+            "playlists": {
+                "0": true
+            }
+        },
+        "2": {
+            "tag": "worldcup",
+            "playlists": {
+                "0": true
+            }
+        },
+        "3": {
+            "tag": "worldcup2018",
+            "playlists": {
+                "0": true
+            }
+        },
+        "4": {
+            "tag": "russia",
+            "playlists": {
+                "0": true
+            }
+        },
+        "5": {
+            "tag": "france",
+            "playlists": {
+                "0": true
+            }
+        },
+        "6": {
+            "tag": "croatia",
+            "playlists": {
+                "0": true
+            }
+        },
+        "7": {
+            "tag": "트와이스",
+            "playlists": {
+                "1": true
+            }
+        },
+        "8": {
+            "tag": "twice",
+            "playlists": {
+                "1": true
+            }
+        },
+        "9": {
+            "tag": "twicemusicvideo",
+            "playlists": {
+                "1": true
+            }
+        },
+        "10": {
+            "tag": "jyp",
+            "playlists": {
+                "1": true
+            }
+        },
+        "11": {
+            "tag": "BTS",
+            "playlists": {
+                "2": true
+            }
+        },
+        "12": {
+            "tag": "방탄소년단",
+            "playlists": {
+                "2": true
+            }
+        }
+    },
+    "today": {
+        "0": true,
+        "1": true
+    },
+    "rank": {
+        "0": true,
+        "1": true,
+        "2": true
+    },
+    "topTags": {
+        "2": true,
+        "8": true
+    },
+    "playlists": {
+        "0": {
+            "title": "Worldcup 2018 Final",
+            "desc": "France v Croatia - 2018 FIFA World Cup™ FINAL",
+            "views": 5123908,
+            "saves": 2,
+            "videos": {
+                "g1xzP_IOcA8": true,
+                "F1FuMq9ijRU": true,
+                "1M2DtGqdMbI": true,
+                "KncQch8pgao": true,
+                "ILOFwBBcGv4": true,
+                "BfJRfKxgmIE": true
+            },
+            "tags": {
+                "0": true,
+                "1": true,
+                "2": true,
+                "3": true,
+                "4": true,
+                "5": true,
+                "6": true
+            }
+        },
+        "1": {
+            "title": "Twice Music Videos",
+            "desc": "트와이스 공식 뮤직비디오 모음입니다",
+            "views": 53908,
+            "saves": 22,
+            "videos": {
+                "Fm5iP0S1z9w": true,
+                "i0p1bmr0EmE": true,
+                "rRzxEiBLQCA": true,
+                "V2hlQkVJZhE": true,
+                "VQtonf1fv_s": true,
+                "8A2t_tAjMz8": true
+            },
+            "tags": {
+                "7": true,
+                "8": true,
+                "9": true,
+                "10": true
+            }
+        },
+        "2": {
+            "title": "BTS Music Videos",
+            "desc": "방탄소년단 뮤직비디오 모음입니다",
+            "views": 11083,
+            "saves": 35,
+            "videos": {
+                "rBG5L7UsUxA": true,
+                "gqhWHy0rrtM": true,
+                "mmgxPLLLyVo": true,
+                "hmE9f-TEutc": true,
+                "xEeFrLSkMm8": true,
+                "9DwzBICPhdM": true
+            },
+            "tags": {
+                "11": true,
+                "12": true
+            }
+        }
+    }
 }
-
