@@ -20,14 +20,37 @@ protocol HomeViewModelItem {
     var rowCount: Int { get }
 }
 
+typealias CompletionHandler = (() -> Void)
+
 class HomeViewModel: NSObject {
     var items = [HomeViewModelItem]()
     
-    override init() {
-        super.init()
-        
-        let todayItem = HomeViewModelTodayItem(title: "Worldcup 2018", desc: "France vs Croatia final", imgUrl: URL(fileURLWithPath: ""))
-        items.append(todayItem)
+    private var firebaseConn = FirebaseConn()
+    private var completion: CompletionHandler!
+    private var playlists = [Playlist]() {
+        didSet {
+            firebaseConn.getData(from: FirebaseConn.todayPath) { [weak self] data in
+                if let todayList = data as? [Any],
+                    let today = todayList[0] as? Int,
+                    let todayPlaylist = self?.playlists[today] as? Playlist {
+                    let todayItem = HomeViewModelTodayItem(title: todayPlaylist.title, desc: todayPlaylist.desc, imgUrl: URL(fileURLWithPath: ""))
+                    self?.items.append(todayItem)
+                }
+            }
+        }
+    }
+    
+    func register(completion: @escaping CompletionHandler) {
+        self.completion = completion
+        firebaseConn.getData(from: FirebaseConn.playlistsPath) { [weak self] data in
+            var newPlaylists = [Playlist]()
+            if let playlists = data as? [Any] {
+                for playlist in playlists {
+                    newPlaylists.append(Playlist(dict: playlist as! [String:Any]))
+                }
+            }
+            self?.playlists = newPlaylists
+        }
     }
 }
 

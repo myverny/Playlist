@@ -14,7 +14,8 @@ class FirebaseConn {
     static var cache = [String: Any]()
     static var tagsPath = FirebaseConn.ref.child("data/tags")
     static var playlistsPath = FirebaseConn.ref.child("data/playlists")
-    
+    static var todayPath = FirebaseConn.ref.child("data/today")
+
     func getData(from childRef: DatabaseReference, completion: @escaping (Any) -> Void) {
         let key = childRef.key
         if let cacheData = FirebaseConn.cache[key] {

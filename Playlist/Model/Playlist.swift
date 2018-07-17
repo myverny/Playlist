@@ -16,6 +16,16 @@ struct Playlist {
     let viewCount: Int
     let bookmakrCount: Int
     let tags: [Int]
+    
+    init(dict: [String:Any]) {
+        self.id = dict["id"] as! Int
+        self.title = dict["title"] as? String ?? ""
+        self.desc = dict["desc"] as? String ?? ""
+        self.videoIds = []
+        self.viewCount = dict["viewCount"] as? Int ?? 0
+        self.bookmakrCount = dict["bookmarkCount"] as? Int ?? 0
+        self.tags = []
+    }
 }
 
 struct tag {
