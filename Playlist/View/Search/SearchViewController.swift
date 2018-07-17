@@ -37,7 +37,7 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
         
         if let searchTagCell = cell as? SearchTagCollectionViewCell,
             let tagInfo = tags[indexPath.item] as? [String:Any],
-            let tagName = tagInfo["tag"] as? String {
+            let tagName = tagInfo["name"] as? String {
             searchTagCell.setTagName(as: tagName)
         }
         return cell

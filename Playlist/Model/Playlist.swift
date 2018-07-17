@@ -18,7 +18,7 @@ struct Playlist {
     let tags: [Int]
 }
 
-struct tag {
+struct Tag {
     let id: Int
     let name: String
 }
