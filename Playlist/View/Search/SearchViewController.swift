@@ -45,16 +45,16 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let flowLayout = LeftAlignedCollectionViewFlowLayout()
-        flowLayout.estimatedItemSize = CGSize(width: 1, height: 1)
-        tagCollectionView.collectionViewLayout = flowLayout
+        if let flowLayout = tagCollectionView.collectionViewLayout as? LeftAlignedCollectionViewFlowLayout {
+            flowLayout.estimatedItemSize = CGSize(width: 1, height: 1)
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         firebaseConn = FirebaseConn()
-        firebaseConn.getDataRef().child("tags").observe(.value) { (snapshot) in
-            if let tagSnapshot = snapshot.value as? [Any] {
+        firebaseConn.getData(from: FirebaseConn.tagsPath) { data in
+            if let tagSnapshot = data as? [Any] {
                 self.tags = tagSnapshot
             }
         }
@@ -62,7 +62,6 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        firebaseConn.getDataRef().removeAllObservers()
     }
 
 }
