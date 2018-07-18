@@ -36,7 +36,7 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
         let cell = tagCollectionView.dequeueReusableCell(withReuseIdentifier: "search tag", for: indexPath)
         
         if let searchTagCell = cell as? SearchTagCollectionViewCell {
-            searchTagCell.setTagName(as: tags[indexPath.item].name)
+            searchTagCell.tagButton.setTagName(as: tags[indexPath.item].name)
         }
         return cell
     }
