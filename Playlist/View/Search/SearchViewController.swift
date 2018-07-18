@@ -37,6 +37,7 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
         
         if let searchTagCell = cell as? SearchTagCollectionViewCell {
             searchTagCell.tagButton.setTagName(as: tags[indexPath.item].name)
+            searchTagCell.tagButton.vc = self
         }
         return cell
     }

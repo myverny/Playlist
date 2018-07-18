@@ -30,6 +30,8 @@
 		D82F623C20FDAD4E00044708 /* LeftAlignedCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82F623B20FDAD4E00044708 /* LeftAlignedCollectionViewFlowLayout.swift */; };
 		D82F623E20FDD64E00044708 /* Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82F623D20FDD64E00044708 /* Tag.swift */; };
 		D844BBE720FF0BC7009DAFCF /* TagButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D844BBE620FF0BC7009DAFCF /* TagButton.swift */; };
+		D844BBF020FF161F009DAFCF /* TagPlaylistsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D844BBEE20FF161F009DAFCF /* TagPlaylistsViewController.swift */; };
+		D844BBF320FF16EA009DAFCF /* TagPlaylists.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D844BBF220FF16EA009DAFCF /* TagPlaylists.storyboard */; };
 		D8706E9920FC717900D553D2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D8706E9820FC717900D553D2 /* GoogleService-Info.plist */; };
 		D8706EA120FC84EA00D553D2 /* AccountTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8706EA020FC84EA00D553D2 /* AccountTableViewController.swift */; };
 		D8706EA320FC85C800D553D2 /* LoginTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8706EA220FC85C800D553D2 /* LoginTableViewCell.swift */; };
@@ -80,6 +82,8 @@
 		D82F623B20FDAD4E00044708 /* LeftAlignedCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftAlignedCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
 		D82F623D20FDD64E00044708 /* Tag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tag.swift; sourceTree = "<group>"; };
 		D844BBE620FF0BC7009DAFCF /* TagButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagButton.swift; sourceTree = "<group>"; };
+		D844BBEE20FF161F009DAFCF /* TagPlaylistsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagPlaylistsViewController.swift; sourceTree = "<group>"; };
+		D844BBF220FF16EA009DAFCF /* TagPlaylists.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TagPlaylists.storyboard; sourceTree = "<group>"; };
 		D8706E9820FC717900D553D2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D8706EA020FC84EA00D553D2 /* AccountTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountTableViewController.swift; sourceTree = "<group>"; };
 		D8706EA220FC85C800D553D2 /* LoginTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginTableViewCell.swift; sourceTree = "<group>"; };
@@ -232,6 +236,8 @@
 			isa = PBXGroup;
 			children = (
 				D844BBE620FF0BC7009DAFCF /* TagButton.swift */,
+				D844BBEE20FF161F009DAFCF /* TagPlaylistsViewController.swift */,
+				D844BBF220FF16EA009DAFCF /* TagPlaylists.storyboard */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -378,6 +384,7 @@
 				D754F05120FC69C200D654B7 /* Search.storyboard in Resources */,
 				D754F06920FE15CB00D654B7 /* RankTableViewCell.xib in Resources */,
 				D754F06320FD8D9500D654B7 /* TodayTableViewCell.xib in Resources */,
+				D844BBF320FF16EA009DAFCF /* TagPlaylists.storyboard in Resources */,
 				D754F05320FC6AFC00D654B7 /* History.storyboard in Resources */,
 				D754F06D20FE18F900D654B7 /* RankCollectionViewCell.xib in Resources */,
 				D754F05520FC6B1400D654B7 /* Account.storyboard in Resources */,
@@ -483,6 +490,7 @@
 				D8706EA120FC84EA00D553D2 /* AccountTableViewController.swift in Sources */,
 				D8F9334720FCD2E90032696F /* SearchTagCollectionViewCell.swift in Sources */,
 				D754F06820FE15CB00D654B7 /* RankTableViewCell.swift in Sources */,
+				D844BBF020FF161F009DAFCF /* TagPlaylistsViewController.swift in Sources */,
 				D8706EA320FC85C800D553D2 /* LoginTableViewCell.swift in Sources */,
 				D82F623E20FDD64E00044708 /* Tag.swift in Sources */,
 			);
