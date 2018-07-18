@@ -11,11 +11,11 @@ import FirebaseDatabase
 
 class FirebaseConn {
     static private var ref = Database.database().reference()
-    static var cache = [String: Any]()
+    static var cache = [String: [DataSnapshot]]()
     static var tagsPath = FirebaseConn.ref.child("data/tags")
     static var playlistsPath = FirebaseConn.ref.child("data/playlists")
     
-    func getData(from childRef: DatabaseReference, completion: @escaping (Any) -> Void) {
+    func getData(from childRef: DatabaseReference, completion: @escaping ([DataSnapshot]) -> Void) {
         let key = childRef.key
         if let cacheData = FirebaseConn.cache[key] {
             completion(cacheData)
@@ -23,7 +23,7 @@ class FirebaseConn {
         }
         
         childRef.observeSingleEvent(of: .value) { snapshot in
-            if let snapshotData = snapshot.value {
+            if let snapshotData = snapshot.children.allObjects as? [DataSnapshot] {
                 FirebaseConn.cache[key] = snapshotData
                 completion(snapshotData)
             }

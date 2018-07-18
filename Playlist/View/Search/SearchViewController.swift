@@ -18,7 +18,7 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
     }
     
     private var firebaseConn: FirebaseConn!
-    private var tags = [Any]() {
+    private var tags = [Tag]() {
         didSet {
             tagCollectionView.reloadData()
         }
@@ -35,10 +35,8 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = tagCollectionView.dequeueReusableCell(withReuseIdentifier: "search tag", for: indexPath)
         
-        if let searchTagCell = cell as? SearchTagCollectionViewCell,
-            let tagInfo = tags[indexPath.item] as? [String:Any],
-            let tagName = tagInfo["name"] as? String {
-            searchTagCell.setTagName(as: tagName)
+        if let searchTagCell = cell as? SearchTagCollectionViewCell {
+            searchTagCell.setTagName(as: tags[indexPath.item].name)
         }
         return cell
     }
@@ -49,10 +47,14 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
             flowLayout.estimatedItemSize = CGSize(width: 1, height: 1)
         }
         firebaseConn = FirebaseConn()
-        firebaseConn.getData(from: FirebaseConn.tagsPath) { data in
-            if let tagSnapshot = data as? [Any] {
-                self.tags = tagSnapshot
+        firebaseConn.getData(from: FirebaseConn.tagsPath) { snapshots in
+            var tags = [Tag]()
+            for snapshot in snapshots {
+                if let tag = Tag.init(snapshot) {
+                    tags.append(tag)
+                }
             }
+            self.tags = tags
         }
     }
     
