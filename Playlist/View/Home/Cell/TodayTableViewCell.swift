@@ -27,12 +27,4 @@ class TodayTableViewCell: UITableViewCell {
     static var identifier: String {
         return String(describing: self)
     }
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-    }
-    
-    override func prepareForReuse() {
-        super.prepareForReuse()
-    }
 }
