@@ -21,6 +21,12 @@ class HomeViewController: UIViewController {
         
         tableView?.register(TodayTableViewCell.nib, forCellReuseIdentifier: TodayTableViewCell.identifier)
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        viewModel.register { [weak self] in
+            self?.tableView?.reloadData()
+        }
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
