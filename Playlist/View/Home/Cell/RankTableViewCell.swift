@@ -10,7 +10,13 @@ import UIKit
 
 class RankTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var rankCollectionView: UICollectionView!
+    @IBOutlet weak var rankCollectionView: UICollectionView! {
+        didSet {
+            if let flowLayout = rankCollectionView.collectionViewLayout as? LeftAlignedCollectionViewFlowLayout {
+                flowLayout.estimatedItemSize = CGSize(width: 1, height: 1)
+            }
+        }
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
