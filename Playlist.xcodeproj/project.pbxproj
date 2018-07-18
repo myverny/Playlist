@@ -171,7 +171,7 @@
 		D714739A20FC5AF900C63041 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				D844BBE520FF0B9B009DAFCF /* xib */,
+				D844BBE520FF0B9B009DAFCF /* Common */,
 				D8706E9220FC6D5200D553D2 /* Account */,
 				D8706E9320FC6D5D00D553D2 /* History */,
 				D8706E9420FC6D6700D553D2 /* Search */,
@@ -228,12 +228,12 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
-		D844BBE520FF0B9B009DAFCF /* xib */ = {
+		D844BBE520FF0B9B009DAFCF /* Common */ = {
 			isa = PBXGroup;
 			children = (
 				D844BBE620FF0BC7009DAFCF /* TagButton.swift */,
 			);
-			path = xib;
+			path = Common;
 			sourceTree = "<group>";
 		};
 		D8706E8F20FC5FEE00D553D2 /* Supporting Files */ = {
