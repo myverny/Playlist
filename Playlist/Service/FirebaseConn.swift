@@ -32,5 +32,28 @@ class FirebaseConn {
         }
     }
     
+    func getTags(_ delegate: FirebaseConnDelegate) {
+        getData(from: FirebaseConn.tagsPath) { snapshots in
+            var tags = [String:Tag]()
+            for snapshot in snapshots {
+                if let tag = Tag.init(snapshot) {
+                    tags[tag.id] = tag
+                }
+            }
+            delegate.tags = tags
+        }
+    }
+    
+    func getPlaylists(_ delegate: FirebaseConnDelegate) {
+        getData(from: FirebaseConn.playlistsPath) { snapshots in
+            var playlists = [String:Playlist]()
+            for snapshot in snapshots {
+                if let playlist = Playlist.init(snapshot) {
+                    playlists[playlist.id] = playlist
+                }
+            }
+            delegate.playlists = playlists
+        }
+    }
 }
 

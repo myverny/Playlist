@@ -17,6 +17,11 @@ struct Playlist {
     let viewCount: Int
     let bookmarkCount: Int
     let tags: [String]
+    var imgUrl: URL? {
+        get {
+            return URL(string: String(format: "https://img.youtube.com/vi/%@/0.jpg", videos[0]))
+        }
+    }
     
     init?(_ snapshot: DataSnapshot) {
         self.id = snapshot.key
