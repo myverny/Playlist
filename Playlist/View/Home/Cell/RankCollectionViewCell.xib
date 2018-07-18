@@ -77,6 +77,12 @@
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <size key="customSize" width="238" height="70"/>
+            <connections>
+                <outlet property="descLabel" destination="IyD-sN-3fj" id="QLw-Nf-SLk"/>
+                <outlet property="rankLabel" destination="xpL-wa-WSe" id="ZDw-97-sMr"/>
+                <outlet property="thumbnailImageView" destination="R8d-2D-iea" id="Ve0-dm-x3g"/>
+                <outlet property="titleLabel" destination="TmB-rz-B07" id="at2-wd-nCb"/>
+            </connections>
             <point key="canvasLocation" x="-217" y="175"/>
         </collectionViewCell>
     </objects>

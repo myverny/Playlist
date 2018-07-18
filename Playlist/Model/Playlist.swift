@@ -59,8 +59,6 @@ struct Playlist {
             videos.append(child.key)
         }
         self.videos = videos
-        
-        return
     }
 }
 

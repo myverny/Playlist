@@ -20,9 +20,8 @@ class HomeViewController: UIViewController {
         tableView?.rowHeight = UITableViewAutomaticDimension
         
         tableView?.register(TodayTableViewCell.nib, forCellReuseIdentifier: TodayTableViewCell.identifier)
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
+        tableView?.register(RankTableViewCell.nib, forCellReuseIdentifier: RankTableViewCell.identifier)
+
         viewModel.register { [weak self] in
             self?.tableView?.reloadData()
         }

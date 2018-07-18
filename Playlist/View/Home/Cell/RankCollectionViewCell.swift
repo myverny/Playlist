@@ -10,9 +10,21 @@ import UIKit
 
 class RankCollectionViewCell: UICollectionViewCell {
 
+    @IBOutlet weak var thumbnailImageView: UIImageView!
+    @IBOutlet weak var rankLabel: UILabel!
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var descLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
 
+    static var nib:UINib {
+        return UINib(nibName: identifier, bundle: nil)
+    }
+    
+    static var identifier: String {
+        return String(describing: self)
+    }
 }
