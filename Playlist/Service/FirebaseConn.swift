@@ -16,6 +16,8 @@ class FirebaseConn {
     static var playlistsPath = FirebaseConn.ref.child("data/playlists")
     static var todayPath = FirebaseConn.ref.child("data/today")
     
+    weak var delegate: FirebaseConnDelegate?
+    
     func getData(from childRef: DatabaseReference, completion: @escaping ([DataSnapshot]) -> Void) {
         let key = childRef.key
         if let cacheData = FirebaseConn.cache[key] {
@@ -29,6 +31,23 @@ class FirebaseConn {
                 completion(snapshotData)
             }
         }
+    }
+    
+    func getTags() {
+        getData(from: FirebaseConn.tagsPath) {
+            snapshots in
+            var tags = [Tag]()
+            for snapshot in snapshots {
+                if let tag = Tag.init(snapshot) {
+                    tags.append(tag)
+                }
+            }
+            self.delegate?.tags = tags
+        }
+    }
+    
+    func getPlaylists() {
+        
     }
 }
 

@@ -8,7 +8,13 @@
 
 import UIKit
 
-class SearchViewController: UIViewController, UICollectionViewDataSource {
+class SearchViewController: UIViewController, UICollectionViewDataSource, FirebaseConnDelegate {
+    var playlists: [Playlist]?
+    var tags: [Tag]? {
+        didSet {
+            tagCollectionView.reloadData()
+        }
+    }
     
     @IBOutlet private weak var tagCollectionView: UICollectionView! {
         didSet {
@@ -16,10 +22,9 @@ class SearchViewController: UIViewController, UICollectionViewDataSource {
         }
     }
     
-    private var firebaseConn: FirebaseConn!
-    private var tags = [Tag]() {
+    private var firebaseConn: FirebaseConn! {
         didSet {
-            tagCollectionView.reloadData()
+            firebaseConn.delegate = self
         }
     }
     
@@ -28,14 +33,15 @@ class SearchViewController: UIViewController, UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return tags.count
+        return tags?.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = tagCollectionView.dequeueReusableCell(withReuseIdentifier: "search tag", for: indexPath)
         
-        if let searchTagCell = cell as? SearchTagCollectionViewCell {
-            searchTagCell.tagButton.setTagName(as: tags[indexPath.item])
+        if let searchTagCell = cell as? SearchTagCollectionViewCell,
+            let tag = tags?[indexPath.item] {
+            searchTagCell.tagButton.setTagName(as: tag)
             searchTagCell.tagButton.vc = self
         }
         return cell
@@ -47,15 +53,7 @@ class SearchViewController: UIViewController, UICollectionViewDataSource {
             flowLayout.estimatedItemSize = CGSize(width: 1, height: 1)
         }
         firebaseConn = FirebaseConn()
-        firebaseConn.getData(from: FirebaseConn.tagsPath) { snapshots in
-            var tags = [Tag]()
-            for snapshot in snapshots {
-                if let tag = Tag.init(snapshot) {
-                    tags.append(tag)
-                }
-            }
-            self.tags = tags
-        }
+        firebaseConn.getTags()
     }
     
 }
