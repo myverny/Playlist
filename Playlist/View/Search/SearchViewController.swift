@@ -8,11 +8,10 @@
 
 import UIKit
 
-class SearchViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+class SearchViewController: UIViewController, UICollectionViewDataSource {
     
     @IBOutlet private weak var tagCollectionView: UICollectionView! {
         didSet {
-            tagCollectionView.delegate = self
             tagCollectionView.dataSource = self
         }
     }
@@ -36,7 +35,7 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
         let cell = tagCollectionView.dequeueReusableCell(withReuseIdentifier: "search tag", for: indexPath)
         
         if let searchTagCell = cell as? SearchTagCollectionViewCell {
-            searchTagCell.tagButton.setTagName(as: tags[indexPath.item].name)
+            searchTagCell.tagButton.setTagName(as: tags[indexPath.item])
             searchTagCell.tagButton.vc = self
         }
         return cell

@@ -32,6 +32,7 @@
 		D844BBE720FF0BC7009DAFCF /* TagButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D844BBE620FF0BC7009DAFCF /* TagButton.swift */; };
 		D844BBF020FF161F009DAFCF /* TagPlaylistsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D844BBEE20FF161F009DAFCF /* TagPlaylistsViewController.swift */; };
 		D844BBF320FF16EA009DAFCF /* TagPlaylists.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D844BBF220FF16EA009DAFCF /* TagPlaylists.storyboard */; };
+		D844BBF920FF24A5009DAFCF /* TagPlaylistsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D844BBF820FF24A5009DAFCF /* TagPlaylistsViewModel.swift */; };
 		D8706E9920FC717900D553D2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D8706E9820FC717900D553D2 /* GoogleService-Info.plist */; };
 		D8706EA120FC84EA00D553D2 /* AccountTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8706EA020FC84EA00D553D2 /* AccountTableViewController.swift */; };
 		D8706EA320FC85C800D553D2 /* LoginTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8706EA220FC85C800D553D2 /* LoginTableViewCell.swift */; };
@@ -84,6 +85,7 @@
 		D844BBE620FF0BC7009DAFCF /* TagButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagButton.swift; sourceTree = "<group>"; };
 		D844BBEE20FF161F009DAFCF /* TagPlaylistsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagPlaylistsViewController.swift; sourceTree = "<group>"; };
 		D844BBF220FF16EA009DAFCF /* TagPlaylists.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TagPlaylists.storyboard; sourceTree = "<group>"; };
+		D844BBF820FF24A5009DAFCF /* TagPlaylistsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagPlaylistsViewModel.swift; sourceTree = "<group>"; };
 		D8706E9820FC717900D553D2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D8706EA020FC84EA00D553D2 /* AccountTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountTableViewController.swift; sourceTree = "<group>"; };
 		D8706EA220FC85C800D553D2 /* LoginTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginTableViewCell.swift; sourceTree = "<group>"; };
@@ -190,6 +192,7 @@
 			isa = PBXGroup;
 			children = (
 				D754F06420FD92FC00D654B7 /* HomeViewModel.swift */,
+				D844BBF820FF24A5009DAFCF /* TagPlaylistsViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -481,6 +484,7 @@
 				D844BBE720FF0BC7009DAFCF /* TagButton.swift in Sources */,
 				D754F06C20FE18F900D654B7 /* RankCollectionViewCell.swift in Sources */,
 				D8F9334920FCD49B0032696F /* SearchViewController.swift in Sources */,
+				D844BBF920FF24A5009DAFCF /* TagPlaylistsViewModel.swift in Sources */,
 				D754F06520FD92FC00D654B7 /* HomeViewModel.swift in Sources */,
 				D82F623C20FDAD4E00044708 /* LeftAlignedCollectionViewFlowLayout.swift in Sources */,
 				D714737B20FC581700C63041 /* AppDelegate.swift in Sources */,

@@ -11,7 +11,7 @@ import UIKit
 class TagButton: UIButton {
     
     private var fontSize = CGFloat(12.0)
-    private(set) var tagName: String!
+    private(set) var buttonTag: Tag!
     weak var vc: UIViewController!
 
     override func awakeFromNib() {
@@ -27,12 +27,12 @@ class TagButton: UIButton {
         self.fontSize = fontSize
     }
     
-    func setTagName(as tag: String) {
-        tagName = tag
+    func setTagName(as tag: Tag) {
+        buttonTag = tag
         let font = UIFont.preferredFont(forTextStyle: .body).withSize(fontSize)
         let paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.alignment = .center
-        let tagString = NSAttributedString(string: "#" + tag, attributes: [.paragraphStyle:paragraphStyle, .font: font, .foregroundColor: #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)])
+        let tagString = NSAttributedString(string: "#" + tag.name, attributes: [.paragraphStyle:paragraphStyle, .font: font, .foregroundColor: #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)])
         let mutableTagString = NSMutableAttributedString(attributedString: tagString)
         
         mutableTagString.addAttribute(.foregroundColor, value: #colorLiteral(red: 0.9098039216, green: 0.3843137255, blue: 0.5529411765, alpha: 1), range: NSMakeRange(0, 1))
@@ -44,7 +44,7 @@ class TagButton: UIButton {
     func touchButton() {
         let storyboard = UIStoryboard(name: "TagPlaylists", bundle: nil)
         if let pvc = storyboard.instantiateInitialViewController() as? TagPlaylistsViewController {
-            pvc.tag = tagName
+            pvc.tag = buttonTag
             vc.show(pvc, sender: self)
         }
     }

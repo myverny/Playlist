@@ -9,17 +9,17 @@
 import UIKit
 
 class TagPlaylistsViewController: UIViewController {
+    var tag: Tag!
+    private var viewModel: TagPlaylistsViewModel!
     
-    var tag: String! {
+    @IBOutlet weak var tableView: UITableView! {
         didSet {
-            self.title = tag
+            viewModel = TagPlaylistsViewModel(tag, vc: self)
+            tableView.dataSource = viewModel
+            tableView.estimatedRowHeight = 100
+            tableView.rowHeight = UITableViewAutomaticDimension
+            tableView.register(TodayTableViewCell.nib, forCellReuseIdentifier: TodayTableViewCell.identifier)
         }
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-
 }
