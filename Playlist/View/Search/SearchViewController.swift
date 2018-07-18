@@ -9,8 +9,8 @@
 import UIKit
 
 class SearchViewController: UIViewController, UICollectionViewDataSource, FirebaseConnDelegate {
-    var playlists: [Playlist]?
-    var tags: [Tag]? {
+    var playlists: [String:Playlist]?
+    var tags: [String:Tag]? {
         didSet {
             tagCollectionView.reloadData()
         }
@@ -22,11 +22,7 @@ class SearchViewController: UIViewController, UICollectionViewDataSource, Fireba
         }
     }
     
-    private var firebaseConn: FirebaseConn! {
-        didSet {
-            firebaseConn.delegate = self
-        }
-    }
+    private var firebaseConn: FirebaseConn!
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
@@ -40,7 +36,7 @@ class SearchViewController: UIViewController, UICollectionViewDataSource, Fireba
         let cell = tagCollectionView.dequeueReusableCell(withReuseIdentifier: "search tag", for: indexPath)
         
         if let searchTagCell = cell as? SearchTagCollectionViewCell,
-            let tag = tags?[indexPath.item] {
+            let tag = tags?[String(indexPath.item)] {
             searchTagCell.tagButton.setTagName(as: tag)
             searchTagCell.tagButton.vc = self
         }
@@ -53,7 +49,7 @@ class SearchViewController: UIViewController, UICollectionViewDataSource, Fireba
             flowLayout.estimatedItemSize = CGSize(width: 1, height: 1)
         }
         firebaseConn = FirebaseConn()
-        firebaseConn.getTags()
+        firebaseConn.getTags(self)
     }
     
 }

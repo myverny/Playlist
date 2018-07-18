@@ -24,22 +24,24 @@ protocol HomeViewModelItem {
 
 typealias CompletionHandler = (() -> Void)
 
-class HomeViewModel: NSObject {
+class HomeViewModel: NSObject, FirebaseConnDelegate {
+
     var items = [HomeViewModelItem]()
-    
-    private var firebaseConn = FirebaseConn()
-    private var completion: CompletionHandler!
-    private var playlists = [String:Playlist]() {
+    var tags: [String : Tag]?
+    var playlists: [String : Playlist]? {
         didSet {
             prepareData()
         }
     }
     
+    private var firebaseConn = FirebaseConn()
+    private var completion: CompletionHandler!
+    
     private func prepareData() {
         firebaseConn.getData(from: FirebaseConn.todayPath) { [weak self] snapshots in
             guard snapshots.count > 0 else { return }
             let todayData = snapshots[0]
-            if let todayPlaylist = self?.playlists[todayData.key] {
+            if let todayPlaylist = self?.playlists?[todayData.key] {
                 let todayItem = HomeViewModelTodayItem(
                     title: todayPlaylist.title,
                     desc: todayPlaylist.desc,
@@ -53,15 +55,7 @@ class HomeViewModel: NSObject {
     
     func register(completion: @escaping CompletionHandler) {
         self.completion = completion
-        firebaseConn.getData(from: FirebaseConn.playlistsPath) { [weak self] snapshots in
-            var playlists = [String:Playlist]()
-            for snapshot in snapshots {
-                if let playlist = Playlist.init(snapshot) {
-                    playlists[playlist.id] = playlist
-                }
-            }
-            self?.playlists = playlists
-        }
+        firebaseConn.getPlaylists(self)
     }
 }
 

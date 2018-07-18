@@ -9,6 +9,6 @@
 import Foundation
 
 protocol FirebaseConnDelegate: class {
-    var tags: [Tag]? { get set }
-    var playlists: [Playlist]? { get set }
+    var tags: [String:Tag]? { get set }
+    var playlists: [String:Playlist]? { get set }
 }

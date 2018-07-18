@@ -9,36 +9,24 @@
 import Foundation
 import UIKit
 
-class TagPlaylistsViewModel: NSObject {
+class TagPlaylistsViewModel: NSObject, FirebaseConnDelegate {
     private var firebaseConn = FirebaseConn()
-    private var playlistsTag: Tag?
+    private var playlistsTag: Tag!
     private var completion: CompletionHandler!
-    private var playlists = [Playlist]() {
+    var tags: [String : Tag]?
+    var playlists: [String : Playlist]? {
         didSet {
             tagPlaylistsViewController.tableView.reloadData()
         }
     }
+    
     private weak var tagPlaylistsViewController: TagPlaylistsViewController!
     
     init(_ tag: Tag, vc: TagPlaylistsViewController) {
         super.init()
         playlistsTag = tag
         tagPlaylistsViewController = vc
-        prepareData()
-    }
-    
-    private func prepareData() {
-        firebaseConn.getData(from: FirebaseConn.playlistsPath) { [weak self] snapshots in
-            var playlists = [Playlist]()
-            for snapshot in snapshots {
-                if let playlist = Playlist.init(snapshot) {
-                    if self?.playlistsTag?.playlists.index(of: playlist.id) != nil {
-                        playlists.append(playlist)
-                    }
-                }
-            }
-            self?.playlists = playlists
-        }
+        firebaseConn.getPlaylists(self)
     }
 }
 
@@ -48,12 +36,12 @@ extension TagPlaylistsViewModel: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return playlists.count
+        return playlistsTag.playlists.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if let cell = tableView.dequeueReusableCell(withIdentifier: TodayTableViewCell.identifier, for: indexPath) as? TodayTableViewCell {
-            let playlist = playlists[indexPath.row]
+        if let cell = tableView.dequeueReusableCell(withIdentifier: TodayTableViewCell.identifier, for: indexPath) as? TodayTableViewCell,
+            let playlist = playlists?[playlistsTag.playlists[indexPath.row]] {
             cell.titleLabel?.text = playlist.title
             cell.descLabel?.text = playlist.desc
             
