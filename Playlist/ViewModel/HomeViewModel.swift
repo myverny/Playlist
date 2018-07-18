@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import FirebaseDatabase
 
 enum HomeViewModelItemType {
     case today
@@ -28,21 +29,21 @@ class HomeViewModel: NSObject {
     
     private var firebaseConn = FirebaseConn()
     private var completion: CompletionHandler!
-    private var playlists = [Playlist]() {
+    private var playlists = [String:Playlist]() {
         didSet {
             prepareData()
         }
     }
     
     private func prepareData() {
-        firebaseConn.getData(from: FirebaseConn.todayPath) { [weak self] data in
-            if let todayList = data as? [Any],
-                let today = todayList[0] as? Int,
-                let todayPlaylist = self?.playlists[today] {
+        firebaseConn.getData(from: FirebaseConn.todayPath) { [weak self] snapshots in
+            guard snapshots.count > 0 else { return }
+            let todayData = snapshots[0]
+            if let todayPlaylist = self?.playlists[todayData.key] {
                 let todayItem = HomeViewModelTodayItem(
                     title: todayPlaylist.title,
                     desc: todayPlaylist.desc,
-                    imgUrl: URL(string: String(format: "https://img.youtube.com/vi/%@/0.jpg", todayPlaylist.videoIds[0]))
+                    imgUrl: URL(string: String(format: "https://img.youtube.com/vi/%@/0.jpg", todayPlaylist.videos[0]))
                 )
                 self?.items.append(todayItem)
                 self?.completion()
@@ -52,14 +53,14 @@ class HomeViewModel: NSObject {
     
     func register(completion: @escaping CompletionHandler) {
         self.completion = completion
-        firebaseConn.getData(from: FirebaseConn.playlistsPath) { [weak self] data in
-            var newPlaylists = [Playlist]()
-            if let playlists = data as? [Any] {
-                for playlist in playlists {
-                    newPlaylists.append(Playlist(dict: playlist as! [String:Any]))
+        firebaseConn.getData(from: FirebaseConn.playlistsPath) { [weak self] snapshots in
+            var playlists = [String:Playlist]()
+            for snapshot in snapshots {
+                if let playlist = Playlist.init(snapshot) {
+                    playlists[playlist.id] = playlist
                 }
             }
-            self?.playlists = newPlaylists
+            self?.playlists = playlists
         }
     }
 }

@@ -7,39 +7,60 @@
 //
 
 import Foundation
+import FirebaseDatabase
 
 struct Playlist {
-    let id: Int
+    let id: String
     let title: String
     let desc: String
-    let videoIds: [String]
+    let videos: [String]
     let viewCount: Int
-    let bookmakrCount: Int
-    let tagIds: [Int]
+    let bookmarkCount: Int
+    let tags: [String]
     
-    init(dict: [String:Any]) {
-        self.id = dict["id"] as! Int
-        self.title = dict["title"] as? String ?? ""
-        self.desc = dict["desc"] as? String ?? ""
-        self.viewCount = dict["viewCount"] as? Int ?? 0
-        self.bookmakrCount = dict["bookmarkCount"] as? Int ?? 0
-
-        var videoIds = [String]()
-        for (key, _) in dict["videos"] as! [String:Any] {
-            videoIds.append(key)
-        }
-        self.videoIds = videoIds
+    init?(_ snapshot: DataSnapshot) {
+        self.id = snapshot.key
         
-        var tagIds = [Int]()
-        if let tags = dict["tags"] as? [String:Any] {
-            for (key, _) in tags {
-                tagIds.append(Int(key)!)
-            }
-        } else if let tags = dict["tags"] as? [Any] {
-            tagIds = Array(0...tags.count)
+        let titleSnapshot = snapshot.childSnapshot(forPath: "title")
+        if let title = titleSnapshot.value as? String {
+            self.title = title
+        } else {
+            return nil
         }
-        self.tagIds = tagIds
-
+        let descSnapshot = snapshot.childSnapshot(forPath: "desc")
+        if let desc = descSnapshot.value as? String {
+            self.desc = desc
+        } else {
+            return nil
+        }
+        let viewCountSnapshot = snapshot.childSnapshot(forPath: "viewCount")
+        if let viewCount = viewCountSnapshot.value as? Int {
+            self.viewCount = viewCount
+        } else {
+            self.viewCount = 0
+        }
+        let bookmarkCountSnapshot = snapshot.childSnapshot(forPath: "bookmarkCount")
+        if let bookmarkCount = bookmarkCountSnapshot.value as? Int {
+            self.bookmarkCount = bookmarkCount
+        } else {
+            self.bookmarkCount = 0
+        }
+        
+        var tags = [String]()
+        let tagsSnapshot = snapshot.childSnapshot(forPath: "tags").children
+        while let child = tagsSnapshot.nextObject() as? DataSnapshot {
+            tags.append(child.key)
+        }
+        self.tags = tags
+        
+        var videos = [String]()
+        let videosSnapshot = snapshot.childSnapshot(forPath: "videos").children
+        while let child = videosSnapshot.nextObject() as? DataSnapshot {
+            videos.append(child.key)
+        }
+        self.videos = videos
+        
+        return
     }
 }
 
