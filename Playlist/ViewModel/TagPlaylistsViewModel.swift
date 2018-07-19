@@ -16,7 +16,7 @@ class TagPlaylistsViewModel: NSObject, FirebaseConnDelegate {
     var tags: [String : Tag]?
     var playlists: [String : Playlist]? {
         didSet {
-            tagPlaylistsViewController.tableView.reloadData()
+            tagPlaylistsViewController.collectionView.reloadData()
         }
     }
     
@@ -30,22 +30,22 @@ class TagPlaylistsViewModel: NSObject, FirebaseConnDelegate {
     }
 }
 
-extension TagPlaylistsViewModel: UITableViewDataSource {
-    func numberOfSections(in tableView: UITableView) -> Int {
+extension TagPlaylistsViewModel: UICollectionViewDataSource {
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return playlistsTag.playlists.count
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if let cell = tableView.dequeueReusableCell(withIdentifier: TodayTableViewCell.identifier, for: indexPath) as? TodayTableViewCell,
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: RankCollectionViewCell.identifier, for: indexPath) as? RankCollectionViewCell,
             let playlist = playlists?[playlistsTag.playlists[indexPath.row]],
             let imgUrl = playlist.imgUrl {
-            cell.setUp(title: playlist.title, desc: playlist.desc, imgUrl: imgUrl, screenSize: tableView.bounds)
+            cell.setUp(hideRank: true, rank: nil, title: playlist.title, desc: playlist.desc, imgUrl: imgUrl)
             return cell
         }
-        return UITableViewCell()
+        return UICollectionViewCell()
     }
 }

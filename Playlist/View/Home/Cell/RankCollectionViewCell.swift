@@ -9,11 +9,33 @@
 import UIKit
 
 class RankCollectionViewCell: UICollectionViewCell {
+    private var hideRank: Bool = false {
+        didSet {
+            rankLabel.isHidden = hideRank
+        }
+    }
 
     @IBOutlet weak var thumbnailImageView: UIImageView!
     @IBOutlet weak var rankLabel: UILabel!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var descLabel: UILabel!
+    
+    func setUp(hideRank: Bool, rank: String?, title: String, desc: String, imgUrl: URL) {
+        self.hideRank = hideRank
+        if (!hideRank) {
+            rankLabel.text = rank
+        }
+        titleLabel.text = title
+        descLabel.text = desc
+        DispatchQueue.global().async() {
+            let imageData = try? Data(contentsOf: imgUrl)
+            DispatchQueue.main.async() { [weak self] in
+                if imageData != nil, let image = UIImage(data: imageData!) {
+                    self?.thumbnailImageView?.image = image
+                }
+            }
+        }
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
