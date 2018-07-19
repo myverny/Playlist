@@ -12,14 +12,12 @@ class TagPlaylistsViewController: UIViewController {
     var tag: Tag!
     private var viewModel: TagPlaylistsViewModel!
     
-    @IBOutlet weak var tableView: UITableView! {
+    @IBOutlet weak var collectionView: UICollectionView! {
         didSet {
+            collectionView.setContentOffset(collectionView.contentOffset, animated:false)
+            collectionView.register(RankCollectionViewCell.nib, forCellWithReuseIdentifier: RankCollectionViewCell.identifier)
             viewModel = TagPlaylistsViewModel(tag, vc: self)
-            tableView.dataSource = viewModel
-            tableView.estimatedRowHeight = 100
-            tableView.rowHeight = UITableViewAutomaticDimension
-            tableView.register(TodayTableViewCell.nib, forCellReuseIdentifier: TodayTableViewCell.identifier)
+            collectionView.dataSource = viewModel
         }
     }
-    
 }

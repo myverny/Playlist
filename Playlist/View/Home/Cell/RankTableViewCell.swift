@@ -9,19 +9,10 @@
 import UIKit
 
 class RankTableViewCell: UITableViewCell {
-
-    @IBOutlet weak var rankCollectionView: UICollectionView!
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-        rankCollectionView.register(RankCollectionViewCell.nib, forCellWithReuseIdentifier: RankCollectionViewCell.identifier)
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    @IBOutlet weak var rankCollectionView: UICollectionView! {
+        didSet {
+            rankCollectionView.register(RankCollectionViewCell.nib, forCellWithReuseIdentifier: RankCollectionViewCell.identifier)
+        }
     }
  
     static var nib:UINib {
@@ -32,8 +23,7 @@ class RankTableViewCell: UITableViewCell {
         return String(describing: self)
     }
 
-    func setCollectionViewDataSourceDelegate<D: UICollectionViewDataSource & UICollectionViewDelegate>(_ dataSourceDelegate: D) {
-        rankCollectionView.delegate = dataSourceDelegate
+    func setCollectionViewDataSourceDelegate(_ dataSourceDelegate: UICollectionViewDataSource) {
         rankCollectionView.dataSource = dataSourceDelegate
         rankCollectionView.setContentOffset(rankCollectionView.contentOffset, animated:false) // Stops collection view if it was scrolling.
         rankCollectionView.reloadData()

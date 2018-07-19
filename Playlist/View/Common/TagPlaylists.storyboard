@@ -18,22 +18,33 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Hxf-BV-CcL">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" directionalLockEnabled="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="3Mw-b2-WMm">
                                 <rect key="frame" x="8" y="52" width="359" height="718"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </tableView>
+                                <collectionViewLayout key="collectionViewLayout" id="qsx-ag-a3N" customClass="VerticalCollectionViewFlowLayout" customModule="Playlist" customModuleProvider="target"/>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="GJX-4h-7ky">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </view>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="Hxf-BV-CcL" secondAttribute="bottom" constant="42" id="5EM-9b-Up4"/>
-                            <constraint firstItem="Hxf-BV-CcL" firstAttribute="top" secondItem="09S-3l-kzv" secondAttribute="top" constant="52" id="6D8-8c-IZA"/>
-                            <constraint firstAttribute="trailing" secondItem="Hxf-BV-CcL" secondAttribute="trailing" constant="8" id="7QQ-vu-Pco"/>
-                            <constraint firstItem="Hxf-BV-CcL" firstAttribute="leading" secondItem="09S-3l-kzv" secondAttribute="leading" constant="8" id="LyS-K6-p1j"/>
+                            <constraint firstItem="3Mw-b2-WMm" firstAttribute="top" secondItem="09S-3l-kzv" secondAttribute="top" constant="52" id="7Zx-ZJ-O0w"/>
+                            <constraint firstAttribute="bottom" secondItem="3Mw-b2-WMm" secondAttribute="bottom" constant="42" id="AcG-Qq-yrZ"/>
+                            <constraint firstItem="3Mw-b2-WMm" firstAttribute="leading" secondItem="09S-3l-kzv" secondAttribute="leading" constant="8" id="FSu-Nv-zlb"/>
+                            <constraint firstAttribute="trailing" secondItem="3Mw-b2-WMm" secondAttribute="trailing" constant="8" id="wev-Oa-SxT"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Pmm-li-kAr"/>
                     </view>
                     <connections>
-                        <outlet property="tableView" destination="Hxf-BV-CcL" id="BNc-x9-Wnc"/>
+                        <outlet property="collectionView" destination="3Mw-b2-WMm" id="LLH-tQ-r8g"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Iv0-eW-7VD" userLabel="First Responder" sceneMemberID="firstResponder"/>

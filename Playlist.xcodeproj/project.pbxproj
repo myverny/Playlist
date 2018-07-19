@@ -39,6 +39,7 @@
 		D844BBFB20FF37D6009DAFCF /* FirebaseConnDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D844BBFA20FF37D6009DAFCF /* FirebaseConnDelegate.swift */; };
 		D844BC01210025B4009DAFCF /* HomeViewModelRankViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D844BC00210025B4009DAFCF /* HomeViewModelRankViewModel.swift */; };
 		D844BC0321002651009DAFCF /* HomeViewModelItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D844BC0221002651009DAFCF /* HomeViewModelItem.swift */; };
+		D844BC052100526D009DAFCF /* VerticalCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = D844BC042100526D009DAFCF /* VerticalCollectionViewFlowLayout.swift */; };
 		D8706E9920FC717900D553D2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D8706E9820FC717900D553D2 /* GoogleService-Info.plist */; };
 		D8706EA120FC84EA00D553D2 /* AccountTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8706EA020FC84EA00D553D2 /* AccountTableViewController.swift */; };
 		D8706EA320FC85C800D553D2 /* LoginTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8706EA220FC85C800D553D2 /* LoginTableViewCell.swift */; };
@@ -98,6 +99,7 @@
 		D844BBFA20FF37D6009DAFCF /* FirebaseConnDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseConnDelegate.swift; sourceTree = "<group>"; };
 		D844BC00210025B4009DAFCF /* HomeViewModelRankViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModelRankViewModel.swift; sourceTree = "<group>"; };
 		D844BC0221002651009DAFCF /* HomeViewModelItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModelItem.swift; sourceTree = "<group>"; };
+		D844BC042100526D009DAFCF /* VerticalCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticalCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
 		D8706E9820FC717900D553D2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D8706EA020FC84EA00D553D2 /* AccountTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountTableViewController.swift; sourceTree = "<group>"; };
 		D8706EA220FC85C800D553D2 /* LoginTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginTableViewCell.swift; sourceTree = "<group>"; };
@@ -266,6 +268,7 @@
 				D844BBE620FF0BC7009DAFCF /* TagButton.swift */,
 				D844BBEE20FF161F009DAFCF /* TagPlaylistsViewController.swift */,
 				D844BBF220FF16EA009DAFCF /* TagPlaylists.storyboard */,
+				D844BC042100526D009DAFCF /* VerticalCollectionViewFlowLayout.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -506,6 +509,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D844BC052100526D009DAFCF /* VerticalCollectionViewFlowLayout.swift in Sources */,
 				D844BBFB20FF37D6009DAFCF /* FirebaseConnDelegate.swift in Sources */,
 				D754F05A20FD876400D654B7 /* Playlist.swift in Sources */,
 				D844BC01210025B4009DAFCF /* HomeViewModelRankViewModel.swift in Sources */,
