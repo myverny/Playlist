@@ -38,6 +38,7 @@
 		D844BBFB20FF37D6009DAFCF /* FirebaseConnDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D844BBFA20FF37D6009DAFCF /* FirebaseConnDelegate.swift */; };
 		D844BC01210025B4009DAFCF /* HomeViewModelRankViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D844BC00210025B4009DAFCF /* HomeViewModelRankViewModel.swift */; };
 		D844BC0321002651009DAFCF /* HomeViewModelItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D844BC0221002651009DAFCF /* HomeViewModelItem.swift */; };
+		D844BC07210067D6009DAFCF /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D844BC06210067D6009DAFCF /* HomeViewModel.swift */; };
 		D8706E9920FC717900D553D2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D8706E9820FC717900D553D2 /* GoogleService-Info.plist */; };
 		D8706EA120FC84EA00D553D2 /* AccountTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8706EA020FC84EA00D553D2 /* AccountTableViewController.swift */; };
 		D8706EA320FC85C800D553D2 /* LoginTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8706EA220FC85C800D553D2 /* LoginTableViewCell.swift */; };
@@ -96,6 +97,7 @@
 		D844BBFA20FF37D6009DAFCF /* FirebaseConnDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseConnDelegate.swift; sourceTree = "<group>"; };
 		D844BC00210025B4009DAFCF /* HomeViewModelRankViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModelRankViewModel.swift; sourceTree = "<group>"; };
 		D844BC0221002651009DAFCF /* HomeViewModelItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModelItem.swift; sourceTree = "<group>"; };
+		D844BC06210067D6009DAFCF /* HomeViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		D8706E9820FC717900D553D2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D8706EA020FC84EA00D553D2 /* AccountTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountTableViewController.swift; sourceTree = "<group>"; };
 		D8706EA220FC85C800D553D2 /* LoginTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginTableViewCell.swift; sourceTree = "<group>"; };
@@ -201,6 +203,7 @@
 		D714739B20FC5B0200C63041 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				D844BC06210067D6009DAFCF /* HomeViewModel.swift */,
 				D844BBF820FF24A5009DAFCF /* TagPlaylistsViewModel.swift */,
 				D844BC00210025B4009DAFCF /* HomeViewModelRankViewModel.swift */,
 				D844BC0221002651009DAFCF /* HomeViewModelItem.swift */,
@@ -508,6 +511,7 @@
 				D844BC01210025B4009DAFCF /* HomeViewModelRankViewModel.swift in Sources */,
 				D8706EA520FC87EE00D553D2 /* LoginTableViewCellDelegate.swift in Sources */,
 				D844BBE720FF0BC7009DAFCF /* TagButton.swift in Sources */,
+				D844BC07210067D6009DAFCF /* HomeViewModel.swift in Sources */,
 				D754F06C20FE18F900D654B7 /* PlaylistsCollectionViewCell.swift in Sources */,
 				D8F9334920FCD49B0032696F /* SearchViewController.swift in Sources */,
 				D844BBF920FF24A5009DAFCF /* TagPlaylistsViewModel.swift in Sources */,
