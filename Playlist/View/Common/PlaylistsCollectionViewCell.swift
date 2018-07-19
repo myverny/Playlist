@@ -8,7 +8,7 @@
 
 import UIKit
 
-class RankCollectionViewCell: UICollectionViewCell {
+class PlaylistsCollectionViewCell: UICollectionViewCell {
     static var frameHeight = CGFloat(74)
     
     private var hideRank: Bool = false {
@@ -42,7 +42,7 @@ class RankCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        frame.size.height = RankCollectionViewCell.frameHeight
+        frame.size.height = PlaylistsCollectionViewCell.frameHeight
         thumbnailImageView.layer.cornerRadius = thumbnailImageView.frame.width / 4.0
         thumbnailImageView.layer.masksToBounds = true
     }

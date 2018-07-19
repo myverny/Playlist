@@ -25,7 +25,7 @@ class HomeViewModelRankViewModel: NSObject, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if let rankItem = item as? HomeViewModelRankItem,
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: RankCollectionViewCell.identifier, for: indexPath) as? RankCollectionViewCell {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PlaylistsCollectionViewCell.identifier, for: indexPath) as? PlaylistsCollectionViewCell {
             let playlist = rankItem.ranks[indexPath.item]
             if let imgUrl = playlist.imgUrl {
                 cell.setUp(hideRank: false, rank: String(indexPath.item), title: playlist.title, desc: playlist.desc, imgUrl: imgUrl)

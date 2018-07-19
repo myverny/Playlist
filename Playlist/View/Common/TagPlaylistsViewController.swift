@@ -19,12 +19,12 @@ class TagPlaylistsViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView! {
         didSet {
             collectionView.setContentOffset(collectionView.contentOffset, animated:false)
-            collectionView.register(RankCollectionViewCell.nib, forCellWithReuseIdentifier: RankCollectionViewCell.identifier)
+            collectionView.register(PlaylistsCollectionViewCell.nib, forCellWithReuseIdentifier: PlaylistsCollectionViewCell.identifier)
             viewModel = TagPlaylistsViewModel(tag, vc: self)
             collectionView.dataSource = viewModel
             if let layout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
                 layout.itemSize = CGSize(width: collectionView.frame.width,
-                                         height: RankCollectionViewCell.frameHeight)
+                                         height: PlaylistsCollectionViewCell.frameHeight)
             }
         }
     }
