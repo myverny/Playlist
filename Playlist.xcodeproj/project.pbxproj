@@ -29,6 +29,7 @@
 		D754F07020FF532000D654B7 /* TodayTableHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = D754F06F20FF532000D654B7 /* TodayTableHeader.xib */; };
 		D754F07220FF535A00D654B7 /* TodayTableHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = D754F07120FF535A00D654B7 /* TodayTableHeader.swift */; };
 		D754F0782100241C00D654B7 /* MultiRowsPagingFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = D754F0772100241C00D654B7 /* MultiRowsPagingFlowLayout.swift */; };
+		D7B031EC2100652A004B28EF /* FoundationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7B031EB2100652A004B28EF /* FoundationExtension.swift */; };
 		D82F623A20FD8EB300044708 /* FirebaseConn.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82F623920FD8EB300044708 /* FirebaseConn.swift */; };
 		D82F623C20FDAD4E00044708 /* LeftAlignedCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82F623B20FDAD4E00044708 /* LeftAlignedCollectionViewFlowLayout.swift */; };
 		D82F623E20FDD64E00044708 /* Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82F623D20FDD64E00044708 /* Tag.swift */; };
@@ -88,6 +89,7 @@
 		D754F06F20FF532000D654B7 /* TodayTableHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TodayTableHeader.xib; sourceTree = "<group>"; };
 		D754F07120FF535A00D654B7 /* TodayTableHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayTableHeader.swift; sourceTree = "<group>"; };
 		D754F0772100241C00D654B7 /* MultiRowsPagingFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiRowsPagingFlowLayout.swift; sourceTree = "<group>"; };
+		D7B031EB2100652A004B28EF /* FoundationExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoundationExtension.swift; sourceTree = "<group>"; };
 		D82F623920FD8EB300044708 /* FirebaseConn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseConn.swift; sourceTree = "<group>"; };
 		D82F623B20FDAD4E00044708 /* LeftAlignedCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftAlignedCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
 		D82F623D20FDD64E00044708 /* Tag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tag.swift; sourceTree = "<group>"; };
@@ -165,6 +167,7 @@
 		D714737920FC581700C63041 /* Playlist */ = {
 			isa = PBXGroup;
 			children = (
+				D7B031EA2100651A004B28EF /* Extension */,
 				D754F05620FC6F6700D654B7 /* Resource */,
 				D714739D20FC5B1900C63041 /* Service */,
 				D714739C20FC5B0B00C63041 /* Model */,
@@ -258,6 +261,14 @@
 				D754F07120FF535A00D654B7 /* TodayTableHeader.swift */,
 			);
 			path = header;
+			sourceTree = "<group>";
+		};
+		D7B031EA2100651A004B28EF /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				D7B031EB2100652A004B28EF /* FoundationExtension.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 		D844BBE520FF0B9B009DAFCF /* Common */ = {
@@ -522,6 +533,7 @@
 				D754F0782100241C00D654B7 /* MultiRowsPagingFlowLayout.swift in Sources */,
 				D754F04820FC631800D654B7 /* HomeViewController.swift in Sources */,
 				D82F623A20FD8EB300044708 /* FirebaseConn.swift in Sources */,
+				D7B031EC2100652A004B28EF /* FoundationExtension.swift in Sources */,
 				D8706EA120FC84EA00D553D2 /* AccountTableViewController.swift in Sources */,
 				D8F9334720FCD2E90032696F /* SearchTagCollectionViewCell.swift in Sources */,
 				D754F06820FE15CB00D654B7 /* RankTableViewCell.swift in Sources */,
