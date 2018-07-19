@@ -37,11 +37,7 @@ class HomeViewModel: NSObject, FirebaseConnDelegate {
             guard snapshots.count > 0 else { return }
             let todayData = snapshots[0]
             if let todayPlaylist = self.playlists?[todayData.key] {
-                let todayItem = HomeViewModelTodayItem(
-                    title: todayPlaylist.title,
-                    desc: todayPlaylist.desc,
-                    imgUrl: todayPlaylist.imgUrl
-                )
+                let todayItem = HomeViewModelTodayItem(playlist: todayPlaylist)
                 self.items.append(todayItem)
                 self.completion()
             }
@@ -86,8 +82,8 @@ extension HomeViewModel: UITableViewDataSource {
         case .today:
             if let cell = tableView.dequeueReusableCell(withIdentifier: TodayTableViewCell.identifier, for: indexPath) as? TodayTableViewCell,
                 let todayItem = item as? HomeViewModelTodayItem,
-                let imgUrl = todayItem.imgUrl {
-                cell.setUp(title: todayItem.title, desc: todayItem.desc, imgUrl: imgUrl, screenSize: tableView.bounds)
+                let playlist = todayItem.playlist {
+                cell.setUp(title: playlist.title, desc: playlist.desc, imgUrl: playlist.imgUrl!, screenSize: tableView.bounds, viewCount: playlist.viewCount, bookmarkCount: playlist.bookmarkCount)
                 return cell
             }
         case .rank:

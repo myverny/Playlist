@@ -13,6 +13,8 @@ class TodayTableViewCell: UITableViewCell {
     @IBOutlet weak var thumbnailImageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var descLabel: UILabel!
+    @IBOutlet weak var viewCountLabel: UILabel!
+    @IBOutlet weak var bookmarkCountLabel: UILabel!
     
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
@@ -20,9 +22,12 @@ class TodayTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func setUp(title: String, desc: String, imgUrl: URL, screenSize: CGRect) {
+    func setUp(title: String, desc: String, imgUrl: URL, screenSize: CGRect, viewCount: Int, bookmarkCount: Int) {
         titleLabel?.text = title
         descLabel?.text = desc
+        viewCountLabel?.text = viewCount.toAbbr() + " views"
+        bookmarkCountLabel?.text = bookmarkCount.toAbbr() + " bookmarks"
+
         DispatchQueue.global().async() {
             let imageData = try? Data(contentsOf: imgUrl)
             DispatchQueue.main.async() { [weak self] in

@@ -27,14 +27,10 @@ class HomeViewModelTodayItem: HomeViewModelItem {
         return 1
     }
     
-    var title: String
-    var desc: String
-    var imgUrl: URL?
+    var playlist: Playlist?
     
-    init(title: String, desc: String, imgUrl: URL?) {
-        self.title = title
-        self.desc = desc
-        self.imgUrl = imgUrl
+    init(playlist: Playlist) {
+        self.playlist = playlist
     }
 }
 
