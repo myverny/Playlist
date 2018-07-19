@@ -12,10 +12,12 @@ import UIKit
 class HomeViewModelTodayViewModel: NSObject, UICollectionViewDataSource {
     private var item: HomeViewModelItem!
     private var base: HomeViewModel!
+    private weak var vc: UIViewController!
     
-    init(_ item: HomeViewModelItem, base: HomeViewModel) {
+    init(_ item: HomeViewModelItem, base: HomeViewModel, vc: UIViewController) {
         self.item = item
         self.base = base
+        self.vc = vc
     }
   
     func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -36,7 +38,7 @@ class HomeViewModelTodayViewModel: NSObject, UICollectionViewDataSource {
             let tagId = todayItem.playlist?.tags[indexPath.item],
             let tag = base.tags?[tagId] {
                 cell.tagButton.setTagName(as: tag)
-                //cell.tagButton.vc = self
+                cell.tagButton.vc = vc
             return cell
         }
         return UICollectionViewCell()

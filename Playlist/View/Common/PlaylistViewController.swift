@@ -27,8 +27,7 @@ class PlaylistViewController: UIViewController, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if let cell = tableView.dequeueReusableCell(withIdentifier: "cell")
-        return cell
+        return UITableViewCell()
     }
     
     override func viewDidLoad() {

@@ -44,6 +44,8 @@
 		D844BC07210067D6009DAFCF /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D844BC06210067D6009DAFCF /* HomeViewModel.swift */; };
 		D844BC0B21006A67009DAFCF /* PlaylistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D844BC0A21006A67009DAFCF /* PlaylistViewController.swift */; };
 		D844BC0D21006A75009DAFCF /* Playlist.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D844BC0C21006A75009DAFCF /* Playlist.storyboard */; };
+		D844BC1221007B2C009DAFCF /* PlaylistTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D844BC1021007B2C009DAFCF /* PlaylistTableViewCell.swift */; };
+		D844BC1321007B2C009DAFCF /* PlaylistTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D844BC1121007B2C009DAFCF /* PlaylistTableViewCell.xib */; };
 		D8706E9920FC717900D553D2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D8706E9820FC717900D553D2 /* GoogleService-Info.plist */; };
 		D8706EA120FC84EA00D553D2 /* AccountTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8706EA020FC84EA00D553D2 /* AccountTableViewController.swift */; };
 		D8706EA320FC85C800D553D2 /* LoginTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8706EA220FC85C800D553D2 /* LoginTableViewCell.swift */; };
@@ -108,6 +110,8 @@
 		D844BC06210067D6009DAFCF /* HomeViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		D844BC0A21006A67009DAFCF /* PlaylistViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistViewController.swift; sourceTree = "<group>"; };
 		D844BC0C21006A75009DAFCF /* Playlist.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Playlist.storyboard; sourceTree = "<group>"; };
+		D844BC1021007B2C009DAFCF /* PlaylistTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistTableViewCell.swift; sourceTree = "<group>"; };
+		D844BC1121007B2C009DAFCF /* PlaylistTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlaylistTableViewCell.xib; sourceTree = "<group>"; };
 		D8706E9820FC717900D553D2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D8706EA020FC84EA00D553D2 /* AccountTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountTableViewController.swift; sourceTree = "<group>"; };
 		D8706EA220FC85C800D553D2 /* LoginTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginTableViewCell.swift; sourceTree = "<group>"; };
@@ -290,6 +294,8 @@
 				D7B031EF21007465004B28EF /* TagCollectionViewCell.xib */,
 				D844BC0A21006A67009DAFCF /* PlaylistViewController.swift */,
 				D844BC0C21006A75009DAFCF /* Playlist.storyboard */,
+				D844BC1021007B2C009DAFCF /* PlaylistTableViewCell.swift */,
+				D844BC1121007B2C009DAFCF /* PlaylistTableViewCell.xib */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -443,6 +449,7 @@
 				D7B031F021007465004B28EF /* TagCollectionViewCell.xib in Resources */,
 				D754F05520FC6B1400D654B7 /* Account.storyboard in Resources */,
 				D754F07020FF532000D654B7 /* TodayTableHeader.xib in Resources */,
+				D844BC1321007B2C009DAFCF /* PlaylistTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -557,6 +564,7 @@
 				D844BC0321002651009DAFCF /* HomeViewModelItem.swift in Sources */,
 				D8706EA320FC85C800D553D2 /* LoginTableViewCell.swift in Sources */,
 				D82F623E20FDD64E00044708 /* Tag.swift in Sources */,
+				D844BC1221007B2C009DAFCF /* PlaylistTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

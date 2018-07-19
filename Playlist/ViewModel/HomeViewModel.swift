@@ -49,7 +49,7 @@ class HomeViewModel: NSObject, FirebaseConnDelegate {
             let todayData = snapshots[0]
             if let todayPlaylist = self.playlists?[todayData.key] {
                 let todayItem = HomeViewModelTodayItem(playlist: todayPlaylist)
-                self.todayViewModel = HomeViewModelTodayViewModel(todayItem, base: self)
+                self.todayViewModel = HomeViewModelTodayViewModel(todayItem, base: self, vc: self.homevc)
                 self.items.append(todayItem)
                 self.completion()
             }
