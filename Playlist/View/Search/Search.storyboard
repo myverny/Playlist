@@ -54,34 +54,7 @@
                                         <rect key="frame" x="0.0" y="28.333333333333371" width="343" height="531"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <collectionViewLayout key="collectionViewLayout" id="gA6-wh-APX" customClass="LeftAlignedCollectionViewFlowLayout" customModule="Playlist" customModuleProvider="target"/>
-                                        <cells>
-                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" reuseIdentifier="search tag" id="uVy-nv-jjS" customClass="SearchTagCollectionViewCell" customModule="Playlist" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <subviews>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZkX-Td-S9g" customClass="TagButton" customModule="Playlist" customModuleProvider="target">
-                                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                            <state key="normal" title="Button">
-                                                                <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                            </state>
-                                                        </button>
-                                                    </subviews>
-                                                </view>
-                                                <constraints>
-                                                    <constraint firstItem="ZkX-Td-S9g" firstAttribute="top" secondItem="uVy-nv-jjS" secondAttribute="top" id="4qC-Ga-HJ6"/>
-                                                    <constraint firstAttribute="trailing" secondItem="ZkX-Td-S9g" secondAttribute="trailing" id="638-nQ-llA"/>
-                                                    <constraint firstAttribute="bottom" secondItem="ZkX-Td-S9g" secondAttribute="bottom" id="hAi-EZ-f6N"/>
-                                                    <constraint firstItem="ZkX-Td-S9g" firstAttribute="leading" secondItem="uVy-nv-jjS" secondAttribute="leading" id="pPj-4H-PxR"/>
-                                                </constraints>
-                                                <connections>
-                                                    <outlet property="tagButton" destination="ZkX-Td-S9g" id="u5W-dm-KQ2"/>
-                                                </connections>
-                                            </collectionViewCell>
-                                        </cells>
+                                        <cells/>
                                     </collectionView>
                                 </subviews>
                                 <constraints>

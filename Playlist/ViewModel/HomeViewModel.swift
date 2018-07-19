@@ -21,13 +21,22 @@ typealias CompletionHandler = (() -> Void)
 class HomeViewModel: NSObject, FirebaseConnDelegate {
 
     var items = [HomeViewModelItem]()
-    var tags: [String : Tag]?
+    var tags: [String : Tag]? {
+        didSet {
+            if playlists != nil {
+                prepareData()
+            }
+        }
+    }
     var playlists: [String : Playlist]? {
         didSet {
-            prepareData()
+            if tags != nil {
+                prepareData()
+            }
         }
     }
     var rankViewModel = [Int: HomeViewModelRankViewModel]()
+    var todayViewModel: HomeViewModelTodayViewModel?
     
     private var firebaseConn = FirebaseConn()
     private var completion: CompletionHandler!
@@ -38,6 +47,7 @@ class HomeViewModel: NSObject, FirebaseConnDelegate {
             let todayData = snapshots[0]
             if let todayPlaylist = self.playlists?[todayData.key] {
                 let todayItem = HomeViewModelTodayItem(playlist: todayPlaylist)
+                self.todayViewModel = HomeViewModelTodayViewModel(todayItem, base: self)
                 self.items.append(todayItem)
                 self.completion()
             }
@@ -64,6 +74,7 @@ class HomeViewModel: NSObject, FirebaseConnDelegate {
     func register(completion: @escaping CompletionHandler) {
         self.completion = completion
         firebaseConn.getPlaylists(self)
+        firebaseConn.getTags(self)
     }
 }
 
@@ -83,6 +94,7 @@ extension HomeViewModel: UITableViewDataSource {
             if let cell = tableView.dequeueReusableCell(withIdentifier: TodayTableViewCell.identifier, for: indexPath) as? TodayTableViewCell,
                 let todayItem = item as? HomeViewModelTodayItem,
                 let playlist = todayItem.playlist {
+                cell.tagCollectionView.dataSource = self.todayViewModel
                 cell.setUp(title: playlist.title, desc: playlist.desc, imgUrl: playlist.imgUrl!, screenSize: tableView.bounds, viewCount: playlist.viewCount, bookmarkCount: playlist.bookmarkCount)
                 return cell
             }

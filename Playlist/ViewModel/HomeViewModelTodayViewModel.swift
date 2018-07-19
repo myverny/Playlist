@@ -1,0 +1,44 @@
+//
+//  HomeViewModelTodayViewModel.swift
+//  Playlist
+//
+//  Created by dev on 2018. 7. 19..
+//  Copyright © 2018년 dorenza. All rights reserved.
+//
+
+import Foundation
+import UIKit
+
+class HomeViewModelTodayViewModel: NSObject, UICollectionViewDataSource {
+    private var item: HomeViewModelItem!
+    private var base: HomeViewModel!
+    
+    init(_ item: HomeViewModelItem, base: HomeViewModel) {
+        self.item = item
+        self.base = base
+    }
+  
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 1
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+
+        if let todayItem = item as? HomeViewModelTodayItem {
+            return (todayItem.playlist?.tags.count)!
+        }
+        return 0
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        if let todayItem = item as? HomeViewModelTodayItem,
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TagCollectionViewCell.identifier, for: indexPath) as? TagCollectionViewCell,
+            let tagId = todayItem.playlist?.tags[indexPath.item],
+            let tag = base.tags?[tagId] {
+                cell.tagButton.setTagName(as: tag)
+                //cell.tagButton.vc = self
+            return cell
+        }
+        return UICollectionViewCell()
+    }
+}

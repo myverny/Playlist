@@ -29,6 +29,8 @@
 		D754F07220FF535A00D654B7 /* TodayTableHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = D754F07120FF535A00D654B7 /* TodayTableHeader.swift */; };
 		D754F0782100241C00D654B7 /* MultiRowsPagingFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = D754F0772100241C00D654B7 /* MultiRowsPagingFlowLayout.swift */; };
 		D7B031EC2100652A004B28EF /* FoundationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7B031EB2100652A004B28EF /* FoundationExtension.swift */; };
+		D7B031EE21006F51004B28EF /* HomeViewModelTodayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7B031ED21006F51004B28EF /* HomeViewModelTodayViewModel.swift */; };
+		D7B031F021007465004B28EF /* TagCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7B031EF21007465004B28EF /* TagCollectionViewCell.xib */; };
 		D82F623A20FD8EB300044708 /* FirebaseConn.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82F623920FD8EB300044708 /* FirebaseConn.swift */; };
 		D82F623C20FDAD4E00044708 /* LeftAlignedCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82F623B20FDAD4E00044708 /* LeftAlignedCollectionViewFlowLayout.swift */; };
 		D82F623E20FDD64E00044708 /* Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82F623D20FDD64E00044708 /* Tag.swift */; };
@@ -44,7 +46,7 @@
 		D8706EA120FC84EA00D553D2 /* AccountTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8706EA020FC84EA00D553D2 /* AccountTableViewController.swift */; };
 		D8706EA320FC85C800D553D2 /* LoginTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8706EA220FC85C800D553D2 /* LoginTableViewCell.swift */; };
 		D8706EA520FC87EE00D553D2 /* LoginTableViewCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8706EA420FC87EE00D553D2 /* LoginTableViewCellDelegate.swift */; };
-		D8F9334720FCD2E90032696F /* SearchTagCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8F9334620FCD2E90032696F /* SearchTagCollectionViewCell.swift */; };
+		D8F9334720FCD2E90032696F /* TagCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8F9334620FCD2E90032696F /* TagCollectionViewCell.swift */; };
 		D8F9334920FCD49B0032696F /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8F9334820FCD49B0032696F /* SearchViewController.swift */; };
 		DF6A632D05064BE601795971 /* Pods_Playlist.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB4AFCE1C11301035A8A9AB5 /* Pods_Playlist.framework */; };
 /* End PBXBuildFile section */
@@ -89,6 +91,8 @@
 		D754F07120FF535A00D654B7 /* TodayTableHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayTableHeader.swift; sourceTree = "<group>"; };
 		D754F0772100241C00D654B7 /* MultiRowsPagingFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiRowsPagingFlowLayout.swift; sourceTree = "<group>"; };
 		D7B031EB2100652A004B28EF /* FoundationExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoundationExtension.swift; sourceTree = "<group>"; };
+		D7B031ED21006F51004B28EF /* HomeViewModelTodayViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModelTodayViewModel.swift; sourceTree = "<group>"; };
+		D7B031EF21007465004B28EF /* TagCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TagCollectionViewCell.xib; sourceTree = "<group>"; };
 		D82F623920FD8EB300044708 /* FirebaseConn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseConn.swift; sourceTree = "<group>"; };
 		D82F623B20FDAD4E00044708 /* LeftAlignedCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftAlignedCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
 		D82F623D20FDD64E00044708 /* Tag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tag.swift; sourceTree = "<group>"; };
@@ -104,7 +108,7 @@
 		D8706EA020FC84EA00D553D2 /* AccountTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountTableViewController.swift; sourceTree = "<group>"; };
 		D8706EA220FC85C800D553D2 /* LoginTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginTableViewCell.swift; sourceTree = "<group>"; };
 		D8706EA420FC87EE00D553D2 /* LoginTableViewCellDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginTableViewCellDelegate.swift; sourceTree = "<group>"; };
-		D8F9334620FCD2E90032696F /* SearchTagCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTagCollectionViewCell.swift; sourceTree = "<group>"; };
+		D8F9334620FCD2E90032696F /* TagCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagCollectionViewCell.swift; sourceTree = "<group>"; };
 		D8F9334820FCD49B0032696F /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -210,6 +214,7 @@
 				D844BBF820FF24A5009DAFCF /* TagPlaylistsViewModel.swift */,
 				D844BC00210025B4009DAFCF /* HomeViewModelRankViewModel.swift */,
 				D844BC0221002651009DAFCF /* HomeViewModelItem.swift */,
+				D7B031ED21006F51004B28EF /* HomeViewModelTodayViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -272,11 +277,13 @@
 		D844BBE520FF0B9B009DAFCF /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				D8F9334620FCD2E90032696F /* TagCollectionViewCell.swift */,
 				D754F06A20FE18F900D654B7 /* PlaylistsCollectionViewCell.swift */,
 				D754F06B20FE18F900D654B7 /* PlaylistsCollectionViewCell.xib */,
 				D844BBE620FF0BC7009DAFCF /* TagButton.swift */,
 				D844BBEE20FF161F009DAFCF /* TagPlaylistsViewController.swift */,
 				D844BBF220FF16EA009DAFCF /* TagPlaylists.storyboard */,
+				D7B031EF21007465004B28EF /* TagCollectionViewCell.xib */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -314,7 +321,6 @@
 			isa = PBXGroup;
 			children = (
 				D754F05020FC69C200D654B7 /* Search.storyboard */,
-				D8F9334620FCD2E90032696F /* SearchTagCollectionViewCell.swift */,
 				D8F9334820FCD49B0032696F /* SearchViewController.swift */,
 				D82F623B20FDAD4E00044708 /* LeftAlignedCollectionViewFlowLayout.swift */,
 			);
@@ -427,6 +433,7 @@
 				D844BBF320FF16EA009DAFCF /* TagPlaylists.storyboard in Resources */,
 				D754F05320FC6AFC00D654B7 /* History.storyboard in Resources */,
 				D754F06D20FE18F900D654B7 /* PlaylistsCollectionViewCell.xib in Resources */,
+				D7B031F021007465004B28EF /* TagCollectionViewCell.xib in Resources */,
 				D754F05520FC6B1400D654B7 /* Account.storyboard in Resources */,
 				D754F07020FF532000D654B7 /* TodayTableHeader.xib in Resources */,
 			);
@@ -530,12 +537,13 @@
 				D82F623C20FDAD4E00044708 /* LeftAlignedCollectionViewFlowLayout.swift in Sources */,
 				D714737B20FC581700C63041 /* AppDelegate.swift in Sources */,
 				D754F06220FD8D9500D654B7 /* TodayTableViewCell.swift in Sources */,
+				D7B031EE21006F51004B28EF /* HomeViewModelTodayViewModel.swift in Sources */,
 				D754F0782100241C00D654B7 /* MultiRowsPagingFlowLayout.swift in Sources */,
 				D754F04820FC631800D654B7 /* HomeViewController.swift in Sources */,
 				D82F623A20FD8EB300044708 /* FirebaseConn.swift in Sources */,
 				D7B031EC2100652A004B28EF /* FoundationExtension.swift in Sources */,
 				D8706EA120FC84EA00D553D2 /* AccountTableViewController.swift in Sources */,
-				D8F9334720FCD2E90032696F /* SearchTagCollectionViewCell.swift in Sources */,
+				D8F9334720FCD2E90032696F /* TagCollectionViewCell.swift in Sources */,
 				D754F06820FE15CB00D654B7 /* RankTableViewCell.swift in Sources */,
 				D844BBF020FF161F009DAFCF /* TagPlaylistsViewController.swift in Sources */,
 				D844BC0321002651009DAFCF /* HomeViewModelItem.swift in Sources */,

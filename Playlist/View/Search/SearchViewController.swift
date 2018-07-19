@@ -18,6 +18,7 @@ class SearchViewController: UIViewController, UICollectionViewDataSource, Fireba
     
     @IBOutlet private weak var tagCollectionView: UICollectionView! {
         didSet {
+            tagCollectionView.register(TagCollectionViewCell.nib, forCellWithReuseIdentifier: TagCollectionViewCell.identifier)
             tagCollectionView.dataSource = self
         }
     }
@@ -33,9 +34,9 @@ class SearchViewController: UIViewController, UICollectionViewDataSource, Fireba
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = tagCollectionView.dequeueReusableCell(withReuseIdentifier: "search tag", for: indexPath)
+        let cell = tagCollectionView.dequeueReusableCell(withReuseIdentifier: TagCollectionViewCell.identifier, for: indexPath)
         
-        if let searchTagCell = cell as? SearchTagCollectionViewCell,
+        if let searchTagCell = cell as? TagCollectionViewCell,
             let tag = tags?[String(indexPath.item)] {
             searchTagCell.tagButton.setTagName(as: tag)
             searchTagCell.tagButton.vc = self
