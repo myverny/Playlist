@@ -16,12 +16,6 @@ enum HomeViewModelItemType {
     case tag
 }
 
-protocol HomeViewModelItem {
-    var type: HomeViewModelItemType { get }
-    var rowCount: Int { get }
-    var sectionTitle: String { get }
-}
-
 typealias CompletionHandler = (() -> Void)
 
 class HomeViewModel: NSObject, FirebaseConnDelegate {
@@ -45,7 +39,7 @@ class HomeViewModel: NSObject, FirebaseConnDelegate {
                 let todayItem = HomeViewModelTodayItem(
                     title: todayPlaylist.title,
                     desc: todayPlaylist.desc,
-                    imgUrl: URL(string: String(format: "https://img.youtube.com/vi/%@/0.jpg", todayPlaylist.videos[0]))
+                    imgUrl: todayPlaylist.imgUrl
                 )
                 self?.items.append(todayItem)
                 self?.completion()
@@ -109,7 +103,7 @@ extension HomeViewModel: UITableViewDataSource {
             }
         case .rank:
             if let cell = tableView.dequeueReusableCell(withIdentifier: RankTableViewCell.identifier, for: indexPath) as? RankTableViewCell {
-                cell.setCollectionViewDataSourceDelegate(self, forRow: indexPath.section)
+                cell.setCollectionViewDataSourceDelegate(HomeViewModelRankViewModel(items[indexPath.section]), forSection: indexPath.section)
                 return cell
             }
         default:

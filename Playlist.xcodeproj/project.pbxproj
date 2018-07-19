@@ -37,6 +37,8 @@
 		D844BBF320FF16EA009DAFCF /* TagPlaylists.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D844BBF220FF16EA009DAFCF /* TagPlaylists.storyboard */; };
 		D844BBF920FF24A5009DAFCF /* TagPlaylistsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D844BBF820FF24A5009DAFCF /* TagPlaylistsViewModel.swift */; };
 		D844BBFB20FF37D6009DAFCF /* FirebaseConnDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D844BBFA20FF37D6009DAFCF /* FirebaseConnDelegate.swift */; };
+		D844BC01210025B4009DAFCF /* HomeViewModelRankViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D844BC00210025B4009DAFCF /* HomeViewModelRankViewModel.swift */; };
+		D844BC0321002651009DAFCF /* HomeViewModelItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D844BC0221002651009DAFCF /* HomeViewModelItem.swift */; };
 		D8706E9920FC717900D553D2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D8706E9820FC717900D553D2 /* GoogleService-Info.plist */; };
 		D8706EA120FC84EA00D553D2 /* AccountTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8706EA020FC84EA00D553D2 /* AccountTableViewController.swift */; };
 		D8706EA320FC85C800D553D2 /* LoginTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8706EA220FC85C800D553D2 /* LoginTableViewCell.swift */; };
@@ -94,6 +96,8 @@
 		D844BBF220FF16EA009DAFCF /* TagPlaylists.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TagPlaylists.storyboard; sourceTree = "<group>"; };
 		D844BBF820FF24A5009DAFCF /* TagPlaylistsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagPlaylistsViewModel.swift; sourceTree = "<group>"; };
 		D844BBFA20FF37D6009DAFCF /* FirebaseConnDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseConnDelegate.swift; sourceTree = "<group>"; };
+		D844BC00210025B4009DAFCF /* HomeViewModelRankViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModelRankViewModel.swift; sourceTree = "<group>"; };
+		D844BC0221002651009DAFCF /* HomeViewModelItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModelItem.swift; sourceTree = "<group>"; };
 		D8706E9820FC717900D553D2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D8706EA020FC84EA00D553D2 /* AccountTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountTableViewController.swift; sourceTree = "<group>"; };
 		D8706EA220FC85C800D553D2 /* LoginTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginTableViewCell.swift; sourceTree = "<group>"; };
@@ -201,6 +205,8 @@
 			children = (
 				D754F06420FD92FC00D654B7 /* HomeViewModel.swift */,
 				D844BBF820FF24A5009DAFCF /* TagPlaylistsViewModel.swift */,
+				D844BC00210025B4009DAFCF /* HomeViewModelRankViewModel.swift */,
+				D844BC0221002651009DAFCF /* HomeViewModelItem.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -502,6 +508,7 @@
 			files = (
 				D844BBFB20FF37D6009DAFCF /* FirebaseConnDelegate.swift in Sources */,
 				D754F05A20FD876400D654B7 /* Playlist.swift in Sources */,
+				D844BC01210025B4009DAFCF /* HomeViewModelRankViewModel.swift in Sources */,
 				D8706EA520FC87EE00D553D2 /* LoginTableViewCellDelegate.swift in Sources */,
 				D844BBE720FF0BC7009DAFCF /* TagButton.swift in Sources */,
 				D754F06C20FE18F900D654B7 /* RankCollectionViewCell.swift in Sources */,
@@ -519,6 +526,7 @@
 				D8F9334720FCD2E90032696F /* SearchTagCollectionViewCell.swift in Sources */,
 				D754F06820FE15CB00D654B7 /* RankTableViewCell.swift in Sources */,
 				D844BBF020FF161F009DAFCF /* TagPlaylistsViewController.swift in Sources */,
+				D844BC0321002651009DAFCF /* HomeViewModelItem.swift in Sources */,
 				D8706EA320FC85C800D553D2 /* LoginTableViewCell.swift in Sources */,
 				D82F623E20FDD64E00044708 /* Tag.swift in Sources */,
 			);
