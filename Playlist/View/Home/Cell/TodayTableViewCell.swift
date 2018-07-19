@@ -28,8 +28,6 @@ class TodayTableViewCell: UITableViewCell {
             DispatchQueue.main.async() { [weak self] in
                 if imageData != nil, let image = UIImage(data: imageData!) {
                     self?.thumbnailImageView?.image = image
-                    self?.thumbnailImageView?.frame.size.width = screenSize.width
-                    self?.thumbnailImageView?.frame.size.height = screenSize.width / image.size.width * image.size.height
                 }
             }
         }
