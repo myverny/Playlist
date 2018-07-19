@@ -16,13 +16,15 @@ class PlaylistsCollectionViewCell: UICollectionViewCell {
             rankLabel.isHidden = hideRank
         }
     }
+    private var videos = [String]()
+    weak var vc: UIViewController!
 
     @IBOutlet weak var thumbnailImageView: UIImageView!
     @IBOutlet weak var rankLabel: UILabel!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var descLabel: UILabel!
     
-    func setUp(hideRank: Bool, rank: String?, title: String, desc: String, imgUrl: URL) {
+    func setUp(hideRank: Bool, rank: String?, title: String, desc: String, imgUrl: URL, videos: [String], vc: UIViewController) {
         self.hideRank = hideRank
         if (!hideRank) {
             rankLabel.text = rank
@@ -37,6 +39,8 @@ class PlaylistsCollectionViewCell: UICollectionViewCell {
                 }
             }
         }
+        self.videos = videos
+        self.vc = vc
     }
     
     override func awakeFromNib() {
