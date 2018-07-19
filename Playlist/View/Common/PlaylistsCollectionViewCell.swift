@@ -16,13 +16,16 @@ class PlaylistsCollectionViewCell: UICollectionViewCell {
             rankLabel.isHidden = hideRank
         }
     }
+    private var videos = [String]()
+    private var tapGestureRecognizer: UIGestureRecognizer?
+    weak var vc: UIViewController!
 
     @IBOutlet weak var thumbnailImageView: UIImageView!
     @IBOutlet weak var rankLabel: UILabel!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var descLabel: UILabel!
     
-    func setUp(hideRank: Bool, rank: String?, title: String, desc: String, imgUrl: URL) {
+    func setUp(hideRank: Bool, rank: String?, title: String, desc: String, imgUrl: URL, videos: [String], vc: UIViewController) {
         self.hideRank = hideRank
         if (!hideRank) {
             rankLabel.text = rank
@@ -36,6 +39,26 @@ class PlaylistsCollectionViewCell: UICollectionViewCell {
                     self?.thumbnailImageView?.image = image
                 }
             }
+        }
+        self.videos = videos
+        self.vc = vc
+        tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(touchCell))
+        addGestureRecognizer(tapGestureRecognizer!)
+    }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        if let tgr = tapGestureRecognizer {
+            removeGestureRecognizer(tgr)
+        }
+    }
+    
+    @objc
+    func touchCell() {
+        let storyboard = UIStoryboard(name: "Playlist", bundle: nil)
+        if let pvc = storyboard.instantiateInitialViewController() as? PlaylistViewController {
+            pvc.videos = videos
+            vc.show(pvc, sender: self)
         }
     }
     

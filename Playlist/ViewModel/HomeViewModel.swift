@@ -38,6 +38,8 @@ class HomeViewModel: NSObject, FirebaseConnDelegate {
     var rankViewModel = [Int: HomeViewModelRankViewModel]()
     var todayViewModel: HomeViewModelTodayViewModel?
     
+    weak var homevc: UIViewController!
+    
     private var firebaseConn = FirebaseConn()
     private var completion: CompletionHandler!
     
@@ -64,7 +66,7 @@ class HomeViewModel: NSObject, FirebaseConnDelegate {
             if ranks.count > 0 {
                 let rankItem = HomeViewModelRankItem()
                 rankItem.ranks = ranks
-                self.rankViewModel[self.items.count] = HomeViewModelRankViewModel(rankItem)
+                self.rankViewModel[self.items.count] = HomeViewModelRankViewModel(rankItem, vc: self.homevc)
                 self.items.append(rankItem)
             }
             self.completion()

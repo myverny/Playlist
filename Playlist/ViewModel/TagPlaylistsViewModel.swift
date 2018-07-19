@@ -43,7 +43,7 @@ extension TagPlaylistsViewModel: UICollectionViewDataSource {
         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PlaylistsCollectionViewCell.identifier, for: indexPath) as? PlaylistsCollectionViewCell,
             let playlist = playlists?[playlistsTag.playlists[indexPath.row]],
             let imgUrl = playlist.imgUrl {
-            cell.setUp(hideRank: true, rank: nil, title: playlist.title, desc: playlist.desc, imgUrl: imgUrl)
+            cell.setUp(hideRank: true, rank: nil, title: playlist.title, desc: playlist.desc, imgUrl: imgUrl, videos: playlist.videos, vc: tagPlaylistsViewController)
             return cell
         }
         return UICollectionViewCell()

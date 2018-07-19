@@ -42,6 +42,8 @@
 		D844BC01210025B4009DAFCF /* HomeViewModelRankViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D844BC00210025B4009DAFCF /* HomeViewModelRankViewModel.swift */; };
 		D844BC0321002651009DAFCF /* HomeViewModelItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D844BC0221002651009DAFCF /* HomeViewModelItem.swift */; };
 		D844BC07210067D6009DAFCF /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D844BC06210067D6009DAFCF /* HomeViewModel.swift */; };
+		D844BC0B21006A67009DAFCF /* PlaylistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D844BC0A21006A67009DAFCF /* PlaylistViewController.swift */; };
+		D844BC0D21006A75009DAFCF /* Playlist.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D844BC0C21006A75009DAFCF /* Playlist.storyboard */; };
 		D8706E9920FC717900D553D2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D8706E9820FC717900D553D2 /* GoogleService-Info.plist */; };
 		D8706EA120FC84EA00D553D2 /* AccountTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8706EA020FC84EA00D553D2 /* AccountTableViewController.swift */; };
 		D8706EA320FC85C800D553D2 /* LoginTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8706EA220FC85C800D553D2 /* LoginTableViewCell.swift */; };
@@ -104,6 +106,8 @@
 		D844BC00210025B4009DAFCF /* HomeViewModelRankViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModelRankViewModel.swift; sourceTree = "<group>"; };
 		D844BC0221002651009DAFCF /* HomeViewModelItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModelItem.swift; sourceTree = "<group>"; };
 		D844BC06210067D6009DAFCF /* HomeViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		D844BC0A21006A67009DAFCF /* PlaylistViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistViewController.swift; sourceTree = "<group>"; };
+		D844BC0C21006A75009DAFCF /* Playlist.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Playlist.storyboard; sourceTree = "<group>"; };
 		D8706E9820FC717900D553D2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D8706EA020FC84EA00D553D2 /* AccountTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountTableViewController.swift; sourceTree = "<group>"; };
 		D8706EA220FC85C800D553D2 /* LoginTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginTableViewCell.swift; sourceTree = "<group>"; };
@@ -284,6 +288,8 @@
 				D844BBEE20FF161F009DAFCF /* TagPlaylistsViewController.swift */,
 				D844BBF220FF16EA009DAFCF /* TagPlaylists.storyboard */,
 				D7B031EF21007465004B28EF /* TagCollectionViewCell.xib */,
+				D844BC0A21006A67009DAFCF /* PlaylistViewController.swift */,
+				D844BC0C21006A75009DAFCF /* Playlist.storyboard */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -424,6 +430,7 @@
 				D714738520FC581A00C63041 /* LaunchScreen.storyboard in Resources */,
 				D8706E9920FC717900D553D2 /* GoogleService-Info.plist in Resources */,
 				D714738220FC581A00C63041 /* Assets.xcassets in Resources */,
+				D844BC0D21006A75009DAFCF /* Playlist.storyboard in Resources */,
 				D754F05820FC6F9900D654B7 /* home.json in Resources */,
 				D714738020FC581700C63041 /* Main.storyboard in Resources */,
 				D754F04F20FC687300D654B7 /* Home.storyboard in Resources */,
@@ -546,6 +553,7 @@
 				D8F9334720FCD2E90032696F /* TagCollectionViewCell.swift in Sources */,
 				D754F06820FE15CB00D654B7 /* RankTableViewCell.swift in Sources */,
 				D844BBF020FF161F009DAFCF /* TagPlaylistsViewController.swift in Sources */,
+				D844BC0B21006A67009DAFCF /* PlaylistViewController.swift in Sources */,
 				D844BC0321002651009DAFCF /* HomeViewModelItem.swift in Sources */,
 				D8706EA320FC85C800D553D2 /* LoginTableViewCell.swift in Sources */,
 				D82F623E20FDD64E00044708 /* Tag.swift in Sources */,

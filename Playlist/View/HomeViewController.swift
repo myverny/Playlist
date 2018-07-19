@@ -14,7 +14,7 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        viewModel.homevc = self
         tableView?.dataSource = viewModel
         tableView?.delegate = viewModel
         tableView?.estimatedRowHeight = 100
