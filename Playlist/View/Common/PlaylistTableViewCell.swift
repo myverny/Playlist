@@ -7,18 +7,24 @@
 //
 
 import UIKit
+import youtube_ios_player_helper
 
 class PlaylistTableViewCell: UITableViewCell {
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    @IBOutlet private weak var ytpView: YTPlayerView!
+    
+    private var videoId: String!
+    
+    func setUp(videoId: String) {
+        self.videoId = videoId
+        ytpView.load(withVideoId: videoId)
     }
     
+    static var nib:UINib {
+        return UINib(nibName: identifier, bundle: nil)
+    }
+    
+    static var identifier: String {
+        return String(describing: self)
+    }
 }
