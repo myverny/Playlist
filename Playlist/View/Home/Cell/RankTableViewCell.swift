@@ -27,6 +27,5 @@ class RankTableViewCell: UITableViewCell {
         rankCollectionView.dataSource = dataSourceDelegate
         rankCollectionView.setContentOffset(rankCollectionView.contentOffset, animated:false) // Stops collection view if it was scrolling.
         rankCollectionView.reloadData()
-
     }
 }
