@@ -19,7 +19,7 @@ struct Playlist {
     let tags: [String]
     var imgUrl: URL? {
         get {
-            return URL(string: String(format: "https://img.youtube.com/vi/%@/0.jpg", videos[0]))
+            return URL(string: String(format: "https://img.youtube.com/vi/%@/mqdefault.jpg", videos[0]))
         }
     }
     

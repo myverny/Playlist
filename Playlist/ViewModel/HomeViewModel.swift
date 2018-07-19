@@ -106,7 +106,7 @@ extension HomeViewModel: UITableViewDelegate {
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let item = items[section]
         switch item.type {
-        case .today:
+        case .today, .rank:
             if let view = tableView.dequeueReusableHeaderFooterView(withIdentifier: TodayTableHeader.identifier) as? TodayTableHeader {
                 view.titleLabel.text = item.sectionTitle
                 return view

@@ -10,19 +10,12 @@ import UIKit
 
 class RankTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var rankCollectionView: UICollectionView! {
-        didSet {
-            if let flowLayout = rankCollectionView.collectionViewLayout as? LeftAlignedCollectionViewFlowLayout {
-                flowLayout.estimatedItemSize = CGSize(width: 1, height: 1)
-            }
-        }
-    }
+    @IBOutlet weak var rankCollectionView: UICollectionView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
         rankCollectionView.register(RankCollectionViewCell.nib, forCellWithReuseIdentifier: RankCollectionViewCell.identifier)
-
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -44,6 +37,5 @@ class RankTableViewCell: UITableViewCell {
         rankCollectionView.dataSource = dataSourceDelegate
         rankCollectionView.setContentOffset(rankCollectionView.contentOffset, animated:false) // Stops collection view if it was scrolling.
         rankCollectionView.reloadData()
-
     }
 }
