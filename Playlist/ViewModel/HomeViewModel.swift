@@ -85,22 +85,9 @@ extension HomeViewModel: UITableViewDataSource {
         switch item.type {
         case .today:
             if let cell = tableView.dequeueReusableCell(withIdentifier: TodayTableViewCell.identifier, for: indexPath) as? TodayTableViewCell,
-                let todayItem = item as? HomeViewModelTodayItem {
-                cell.titleLabel?.text = todayItem.title
-                cell.descLabel?.text = todayItem.desc
-                if todayItem.imgUrl != nil {
-                    DispatchQueue.global().async() {
-                        let imageData = try? Data(contentsOf: todayItem.imgUrl!)
-                        DispatchQueue.main.async() {
-                            if imageData != nil, let image = UIImage(data: imageData!) {
-                                cell.thumbnailImageView?.image = image
-                                let screenSize = tableView.bounds
-                                cell.thumbnailImageView?.frame.size.width = screenSize.width
-                                cell.thumbnailImageView?.frame.size.height = screenSize.width / image.size.width * image.size.height
-                            }
-                        }
-                    }
-                }
+                let todayItem = item as? HomeViewModelTodayItem,
+                let imgUrl = todayItem.imgUrl {
+                cell.setUp(title: todayItem.title, desc: todayItem.desc, imgUrl: imgUrl, screenSize: tableView.bounds)
                 return cell
             }
         case .rank:

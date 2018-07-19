@@ -19,7 +19,22 @@ class TodayTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-
+    
+    func setUp(title: String, desc: String, imgUrl: URL, screenSize: CGRect) {
+        titleLabel?.text = title
+        descLabel?.text = desc
+        DispatchQueue.global().async() {
+            let imageData = try? Data(contentsOf: imgUrl)
+            DispatchQueue.main.async() { [weak self] in
+                if imageData != nil, let image = UIImage(data: imageData!) {
+                    self?.thumbnailImageView?.image = image
+                    self?.thumbnailImageView?.frame.size.width = screenSize.width
+                    self?.thumbnailImageView?.frame.size.height = screenSize.width / image.size.width * image.size.height
+                }
+            }
+        }
+    }
+    
     static var nib:UINib {
         return UINib(nibName: identifier, bundle: nil)
     }
