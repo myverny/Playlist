@@ -26,6 +26,9 @@
 		D754F06920FE15CB00D654B7 /* RankTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D754F06720FE15CB00D654B7 /* RankTableViewCell.xib */; };
 		D754F06C20FE18F900D654B7 /* RankCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D754F06A20FE18F900D654B7 /* RankCollectionViewCell.swift */; };
 		D754F06D20FE18F900D654B7 /* RankCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D754F06B20FE18F900D654B7 /* RankCollectionViewCell.xib */; };
+		D754F07020FF532000D654B7 /* TodayTableHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = D754F06F20FF532000D654B7 /* TodayTableHeader.xib */; };
+		D754F07220FF535A00D654B7 /* TodayTableHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = D754F07120FF535A00D654B7 /* TodayTableHeader.swift */; };
+		D754F0782100241C00D654B7 /* MultiRowsPagingFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = D754F0772100241C00D654B7 /* MultiRowsPagingFlowLayout.swift */; };
 		D82F623A20FD8EB300044708 /* FirebaseConn.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82F623920FD8EB300044708 /* FirebaseConn.swift */; };
 		D82F623C20FDAD4E00044708 /* LeftAlignedCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82F623B20FDAD4E00044708 /* LeftAlignedCollectionViewFlowLayout.swift */; };
 		D82F623E20FDD64E00044708 /* Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82F623D20FDD64E00044708 /* Tag.swift */; };
@@ -80,6 +83,9 @@
 		D754F06720FE15CB00D654B7 /* RankTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RankTableViewCell.xib; sourceTree = "<group>"; };
 		D754F06A20FE18F900D654B7 /* RankCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankCollectionViewCell.swift; sourceTree = "<group>"; };
 		D754F06B20FE18F900D654B7 /* RankCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RankCollectionViewCell.xib; sourceTree = "<group>"; };
+		D754F06F20FF532000D654B7 /* TodayTableHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TodayTableHeader.xib; sourceTree = "<group>"; };
+		D754F07120FF535A00D654B7 /* TodayTableHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayTableHeader.swift; sourceTree = "<group>"; };
+		D754F0772100241C00D654B7 /* MultiRowsPagingFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiRowsPagingFlowLayout.swift; sourceTree = "<group>"; };
 		D82F623920FD8EB300044708 /* FirebaseConn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseConn.swift; sourceTree = "<group>"; };
 		D82F623B20FDAD4E00044708 /* LeftAlignedCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftAlignedCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
 		D82F623D20FDD64E00044708 /* Tag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tag.swift; sourceTree = "<group>"; };
@@ -234,8 +240,18 @@
 				D754F06720FE15CB00D654B7 /* RankTableViewCell.xib */,
 				D754F06A20FE18F900D654B7 /* RankCollectionViewCell.swift */,
 				D754F06B20FE18F900D654B7 /* RankCollectionViewCell.xib */,
+				D754F0772100241C00D654B7 /* MultiRowsPagingFlowLayout.swift */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		D754F06E20FF523700D654B7 /* header */ = {
+			isa = PBXGroup;
+			children = (
+				D754F06F20FF532000D654B7 /* TodayTableHeader.xib */,
+				D754F07120FF535A00D654B7 /* TodayTableHeader.swift */,
+			);
+			path = header;
 			sourceTree = "<group>";
 		};
 		D844BBE520FF0B9B009DAFCF /* Common */ = {
@@ -291,6 +307,7 @@
 		D8706E9520FC6D6D00D553D2 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				D754F06E20FF523700D654B7 /* header */,
 				D754F05B20FD88AA00D654B7 /* Cell */,
 				D754F04E20FC687300D654B7 /* Home.storyboard */,
 			);
@@ -394,6 +411,7 @@
 				D754F05320FC6AFC00D654B7 /* History.storyboard in Resources */,
 				D754F06D20FE18F900D654B7 /* RankCollectionViewCell.xib in Resources */,
 				D754F05520FC6B1400D654B7 /* Account.storyboard in Resources */,
+				D754F07020FF532000D654B7 /* TodayTableHeader.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -489,10 +507,12 @@
 				D754F06C20FE18F900D654B7 /* RankCollectionViewCell.swift in Sources */,
 				D8F9334920FCD49B0032696F /* SearchViewController.swift in Sources */,
 				D844BBF920FF24A5009DAFCF /* TagPlaylistsViewModel.swift in Sources */,
+				D754F07220FF535A00D654B7 /* TodayTableHeader.swift in Sources */,
 				D754F06520FD92FC00D654B7 /* HomeViewModel.swift in Sources */,
 				D82F623C20FDAD4E00044708 /* LeftAlignedCollectionViewFlowLayout.swift in Sources */,
 				D714737B20FC581700C63041 /* AppDelegate.swift in Sources */,
 				D754F06220FD8D9500D654B7 /* TodayTableViewCell.swift in Sources */,
+				D754F0782100241C00D654B7 /* MultiRowsPagingFlowLayout.swift in Sources */,
 				D754F04820FC631800D654B7 /* HomeViewController.swift in Sources */,
 				D82F623A20FD8EB300044708 /* FirebaseConn.swift in Sources */,
 				D8706EA120FC84EA00D553D2 /* AccountTableViewController.swift in Sources */,

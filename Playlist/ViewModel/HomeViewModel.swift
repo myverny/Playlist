@@ -84,10 +84,6 @@ extension HomeViewModel: UITableViewDataSource {
         return items[section].rowCount
     }
     
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return items[section].sectionTitle
-    }
-    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let item = items[indexPath.section]
         switch item.type {
@@ -123,6 +119,27 @@ extension HomeViewModel: UITableViewDataSource {
     }
 }
 
+extension HomeViewModel: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let item = items[section]
+        switch item.type {
+        case .today:
+            if let view = tableView.dequeueReusableHeaderFooterView(withIdentifier: TodayTableHeader.identifier) as? TodayTableHeader {
+                view.titleLabel.text = item.sectionTitle
+                return view
+            }
+            
+        default:
+            return UIView()
+        }
+        return UIView()
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 50
+    }
+}
+
 extension HomeViewModel: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         let item = items[collectionView.tag]
@@ -130,6 +147,10 @@ extension HomeViewModel: UICollectionViewDelegate, UICollectionViewDataSource {
             return rankItem.ranks.count
         }
         return 0
+    }
+    
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 1
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
