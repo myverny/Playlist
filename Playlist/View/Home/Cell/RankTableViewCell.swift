@@ -13,8 +13,9 @@ class RankTableViewCell: UITableViewCell {
         didSet {
             rankCollectionView.register(RankCollectionViewCell.nib, forCellWithReuseIdentifier: RankCollectionViewCell.identifier)
             if let layout = rankCollectionView.collectionViewLayout as? UICollectionViewFlowLayout {
-                let height = layout.itemSize.height
-                layout.itemSize = CGSize(width: rankCollectionView.frame.width, height: height)
+//                let height = layout.itemSize.height
+                layout.itemSize = CGSize(width: rankCollectionView.frame.width,
+                                         height: RankCollectionViewCell.frameHeight)
             }
         }
     }

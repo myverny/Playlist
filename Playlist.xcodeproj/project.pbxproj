@@ -244,8 +244,8 @@
 			isa = PBXGroup;
 			children = (
 				D754F06020FD8D9500D654B7 /* TodayTableViewCell.swift */,
-				D754F06120FD8D9500D654B7 /* TodayTableViewCell.xib */,
 				D754F06620FE15CB00D654B7 /* RankTableViewCell.swift */,
+				D754F06120FD8D9500D654B7 /* TodayTableViewCell.xib */,
 				D754F06720FE15CB00D654B7 /* RankTableViewCell.xib */,
 				D754F06A20FE18F900D654B7 /* RankCollectionViewCell.swift */,
 				D754F06B20FE18F900D654B7 /* RankCollectionViewCell.xib */,
