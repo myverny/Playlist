@@ -9,7 +9,9 @@
 import UIKit
 
 class PlaylistViewController: UIViewController {
-
+    
+    var videos: [String]!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

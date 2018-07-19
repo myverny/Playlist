@@ -17,6 +17,7 @@ class PlaylistsCollectionViewCell: UICollectionViewCell {
         }
     }
     private var videos = [String]()
+    private var tapGestureRecognizer: UIGestureRecognizer?
     weak var vc: UIViewController!
 
     @IBOutlet weak var thumbnailImageView: UIImageView!
@@ -41,6 +42,24 @@ class PlaylistsCollectionViewCell: UICollectionViewCell {
         }
         self.videos = videos
         self.vc = vc
+        tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(touchCell))
+        addGestureRecognizer(tapGestureRecognizer!)
+    }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        if let tgr = tapGestureRecognizer {
+            removeGestureRecognizer(tgr)
+        }
+    }
+    
+    @objc
+    func touchCell() {
+        let storyboard = UIStoryboard(name: "Playlist", bundle: nil)
+        if let pvc = storyboard.instantiateInitialViewController() as? PlaylistViewController {
+            pvc.videos = videos
+            vc.show(pvc, sender: self)
+        }
     }
     
     override func awakeFromNib() {
