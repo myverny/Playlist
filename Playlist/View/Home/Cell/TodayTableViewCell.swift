@@ -15,6 +15,14 @@ class TodayTableViewCell: UITableViewCell {
     @IBOutlet weak var descLabel: UILabel!
     @IBOutlet weak var viewCountLabel: UILabel!
     @IBOutlet weak var bookmarkCountLabel: UILabel!
+    @IBOutlet weak var tagCollectionView: UICollectionView! {
+        didSet {
+            tagCollectionView.register(TagCollectionViewCell.nib, forCellWithReuseIdentifier: TagCollectionViewCell.identifier)
+            if let flowLayout = tagCollectionView.collectionViewLayout as? LeftAlignedCollectionViewFlowLayout {
+                flowLayout.estimatedItemSize = CGSize(width: 1, height: 1)
+            }
+        }
+    }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)

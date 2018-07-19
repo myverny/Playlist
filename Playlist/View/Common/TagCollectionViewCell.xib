@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="q1u-nF-tW2" customClass="TagCollectionViewCell" customModule="Playlist" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HZC-fL-GNl" customClass="TagButton" customModule="Playlist" customModuleProvider="target">
+                        <rect key="frame" x="4" y="0.0" width="46" height="50"/>
+                        <state key="normal" title="Button"/>
+                    </button>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="iYL-9q-QiZ" firstAttribute="trailing" secondItem="HZC-fL-GNl" secondAttribute="trailing" id="GgB-xc-AwJ"/>
+                <constraint firstItem="HZC-fL-GNl" firstAttribute="top" secondItem="iYL-9q-QiZ" secondAttribute="top" id="ZIh-6Z-CPC"/>
+                <constraint firstItem="iYL-9q-QiZ" firstAttribute="bottom" secondItem="HZC-fL-GNl" secondAttribute="bottom" id="a0z-PI-KLq"/>
+                <constraint firstItem="HZC-fL-GNl" firstAttribute="leading" secondItem="iYL-9q-QiZ" secondAttribute="leading" constant="4" id="gzv-SZ-hj3"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="iYL-9q-QiZ"/>
+            <connections>
+                <outlet property="tagButton" destination="HZC-fL-GNl" id="qra-NH-VsN"/>
+            </connections>
+            <point key="canvasLocation" x="-69" y="174"/>
+        </collectionViewCell>
+    </objects>
+</document>
