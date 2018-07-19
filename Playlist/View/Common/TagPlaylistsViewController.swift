@@ -11,7 +11,7 @@ import UIKit
 class TagPlaylistsViewController: UIViewController {
     var tag: Tag! {
         didSet {
-            self.title = tag.name
+            self.title = "#\(tag.name)"
         }
     }
     private var viewModel: TagPlaylistsViewModel!
