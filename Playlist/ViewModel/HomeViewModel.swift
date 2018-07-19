@@ -45,7 +45,7 @@ class HomeViewModel: NSObject, FirebaseConnDelegate {
                 let todayItem = HomeViewModelTodayItem(
                     title: todayPlaylist.title,
                     desc: todayPlaylist.desc,
-                    imgUrl: URL(string: String(format: "https://img.youtube.com/vi/%@/0.jpg", todayPlaylist.videos[0]))
+                    imgUrl: todayPlaylist.imgUrl
                 )
                 self?.items.append(todayItem)
                 self?.completion()
@@ -140,7 +140,7 @@ extension HomeViewModel: UICollectionViewDelegate, UICollectionViewDataSource {
             cell.rankLabel.text = String(indexPath.item)
             cell.titleLabel.text = playlist.title
             cell.descLabel.text = playlist.desc
-            let imgUrl = URL(string: String(format: "https://img.youtube.com/vi/%@/0.jpg", playlist.videos[0]))
+            let imgUrl = playlist.imgUrl
             DispatchQueue.global().async() {
                 let imageData = try? Data(contentsOf: imgUrl!)
                 DispatchQueue.main.async() {
