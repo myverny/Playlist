@@ -37,8 +37,7 @@ class HomeViewModelTodayViewModel: NSObject, UICollectionViewDataSource {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TagCollectionViewCell.identifier, for: indexPath) as? TagCollectionViewCell,
             let tagId = todayItem.playlist?.tags[indexPath.item],
             let tag = base.tags?[tagId] {
-                cell.tagButton.setTagName(as: tag)
-                cell.tagButton.vc = vc
+                cell.setUp(tag: tag, vc: vc)
             return cell
         }
         return UICollectionViewCell()

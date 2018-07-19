@@ -19,4 +19,10 @@ class TagCollectionViewCell: UICollectionViewCell {
     static var identifier: String {
         return String(describing: self)
     }
+    
+    func setUp(tag: Tag, vc: UIViewController) {
+        tagButton.setTagName(as: tag)
+        tagButton.vc = vc
+    }
+    
 }

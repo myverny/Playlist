@@ -38,8 +38,7 @@ class SearchViewController: UIViewController, UICollectionViewDataSource, Fireba
         
         if let searchTagCell = cell as? TagCollectionViewCell,
             let tag = tags?[String(indexPath.item)] {
-            searchTagCell.tagButton.setTagName(as: tag)
-            searchTagCell.tagButton.vc = self
+            searchTagCell.setUp(tag: tag, vc: self)
         }
         return cell
     }
