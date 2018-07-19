@@ -41,23 +41,9 @@ extension TagPlaylistsViewModel: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: TodayTableViewCell.identifier, for: indexPath) as? TodayTableViewCell,
-            let playlist = playlists?[playlistsTag.playlists[indexPath.row]] {
-            cell.titleLabel?.text = playlist.title
-            cell.descLabel?.text = playlist.desc
-            
-            if let imgUrl = playlist.imgUrl {
-                DispatchQueue.global().async() {
-                    let imageData = try? Data(contentsOf: imgUrl)
-                    DispatchQueue.main.async {
-                        if imageData != nil, let image = UIImage(data: imageData!) {
-                            cell.thumbnailImageView?.image = image
-                            let screenSize = tableView.bounds
-                            cell.thumbnailImageView?.frame.size.width = screenSize.width
-                            cell.thumbnailImageView?.frame.size.height = screenSize.width / image.size.width * image.size.height
-                        }
-                    }
-                }
-            }
+            let playlist = playlists?[playlistsTag.playlists[indexPath.row]],
+            let imgUrl = playlist.imgUrl {
+            cell.setUp(title: playlist.title, desc: playlist.desc, imgUrl: imgUrl, screenSize: tableView.bounds)
             return cell
         }
         return UITableViewCell()
