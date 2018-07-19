@@ -18,8 +18,10 @@ class TodayTableViewCell: UITableViewCell {
     @IBOutlet weak var tagCollectionView: UICollectionView! {
         didSet {
             tagCollectionView.register(TagCollectionViewCell.nib, forCellWithReuseIdentifier: TagCollectionViewCell.identifier)
-            if let flowLayout = tagCollectionView.collectionViewLayout as? LeftAlignedCollectionViewFlowLayout {
+            if let flowLayout = tagCollectionView.collectionViewLayout as? CenterViewFlowLayout {
                 flowLayout.estimatedItemSize = CGSize(width: 1, height: 1)
+                flowLayout.scrollDirection = .horizontal
+                flowLayout.minimumLineSpacing = 0
             }
         }
     }

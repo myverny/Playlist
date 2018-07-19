@@ -45,6 +45,7 @@
 		D844BC0D21006A75009DAFCF /* Playlist.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D844BC0C21006A75009DAFCF /* Playlist.storyboard */; };
 		D844BC1221007B2C009DAFCF /* PlaylistTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D844BC1021007B2C009DAFCF /* PlaylistTableViewCell.swift */; };
 		D844BC1321007B2C009DAFCF /* PlaylistTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D844BC1121007B2C009DAFCF /* PlaylistTableViewCell.xib */; };
+		D844BC1521008E55009DAFCF /* CenterViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = D844BC1421008E55009DAFCF /* CenterViewFlowLayout.swift */; };
 		D8706E9920FC717900D553D2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D8706E9820FC717900D553D2 /* GoogleService-Info.plist */; };
 		D8706EA120FC84EA00D553D2 /* AccountTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8706EA020FC84EA00D553D2 /* AccountTableViewController.swift */; };
 		D8706EA320FC85C800D553D2 /* LoginTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8706EA220FC85C800D553D2 /* LoginTableViewCell.swift */; };
@@ -110,6 +111,7 @@
 		D844BC0C21006A75009DAFCF /* Playlist.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Playlist.storyboard; sourceTree = "<group>"; };
 		D844BC1021007B2C009DAFCF /* PlaylistTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistTableViewCell.swift; sourceTree = "<group>"; };
 		D844BC1121007B2C009DAFCF /* PlaylistTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlaylistTableViewCell.xib; sourceTree = "<group>"; };
+		D844BC1421008E55009DAFCF /* CenterViewFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CenterViewFlowLayout.swift; sourceTree = "<group>"; };
 		D8706E9820FC717900D553D2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D8706EA020FC84EA00D553D2 /* AccountTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountTableViewController.swift; sourceTree = "<group>"; };
 		D8706EA220FC85C800D553D2 /* LoginTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginTableViewCell.swift; sourceTree = "<group>"; };
@@ -293,6 +295,8 @@
 				D844BC0C21006A75009DAFCF /* Playlist.storyboard */,
 				D844BC1021007B2C009DAFCF /* PlaylistTableViewCell.swift */,
 				D844BC1121007B2C009DAFCF /* PlaylistTableViewCell.xib */,
+				D844BC1421008E55009DAFCF /* CenterViewFlowLayout.swift */,
+				D82F623B20FDAD4E00044708 /* LeftAlignedCollectionViewFlowLayout.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -331,7 +335,6 @@
 			children = (
 				D754F05020FC69C200D654B7 /* Search.storyboard */,
 				D8F9334820FCD49B0032696F /* SearchViewController.swift */,
-				D82F623B20FDAD4E00044708 /* LeftAlignedCollectionViewFlowLayout.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -546,6 +549,7 @@
 				D844BBF920FF24A5009DAFCF /* TagPlaylistsViewModel.swift in Sources */,
 				D754F07220FF535A00D654B7 /* TodayTableHeader.swift in Sources */,
 				D82F623C20FDAD4E00044708 /* LeftAlignedCollectionViewFlowLayout.swift in Sources */,
+				D844BC1521008E55009DAFCF /* CenterViewFlowLayout.swift in Sources */,
 				D714737B20FC581700C63041 /* AppDelegate.swift in Sources */,
 				D754F06220FD8D9500D654B7 /* TodayTableViewCell.swift in Sources */,
 				D7B031EE21006F51004B28EF /* HomeViewModelTodayViewModel.swift in Sources */,

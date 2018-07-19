@@ -17,8 +17,6 @@ class HomeViewController: UIViewController {
         viewModel.homevc = self
         tableView?.dataSource = viewModel
         tableView?.delegate = viewModel
-        tableView?.estimatedRowHeight = 100
-        tableView?.rowHeight = UITableViewAutomaticDimension
         
         // cells
         tableView?.register(TodayTableViewCell.nib, forCellReuseIdentifier: TodayTableViewCell.identifier)
