@@ -9,7 +9,11 @@
 import UIKit
 
 class TagPlaylistsViewController: UIViewController {
-    var tag: Tag!
+    var tag: Tag! {
+        didSet {
+            self.title = tag.name
+        }
+    }
     private var viewModel: TagPlaylistsViewModel!
     
     @IBOutlet weak var collectionView: UICollectionView! {
