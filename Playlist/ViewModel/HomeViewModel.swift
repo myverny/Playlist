@@ -27,39 +27,41 @@ class HomeViewModel: NSObject, FirebaseConnDelegate {
             prepareData()
         }
     }
+    var rankViewModel = [Int: HomeViewModelRankViewModel]()
     
     private var firebaseConn = FirebaseConn()
     private var completion: CompletionHandler!
     
     private func prepareData() {
-        firebaseConn.getData(from: FirebaseConn.todayPath) { [weak self] snapshots in
+        firebaseConn.getData(from: FirebaseConn.todayPath) { snapshots in
             guard snapshots.count > 0 else { return }
             let todayData = snapshots[0]
-            if let todayPlaylist = self?.playlists?[todayData.key] {
+            if let todayPlaylist = self.playlists?[todayData.key] {
                 let todayItem = HomeViewModelTodayItem(
                     title: todayPlaylist.title,
                     desc: todayPlaylist.desc,
                     imgUrl: todayPlaylist.imgUrl
                 )
-                self?.items.append(todayItem)
-                self?.completion()
+                self.items.append(todayItem)
+                self.completion()
             }
         }
         
-        firebaseConn.getData(from: FirebaseConn.rankPath) { [weak self] snapshots in
+        firebaseConn.getData(from: FirebaseConn.rankPath) { snapshots in
             guard snapshots.count > 0 else { return }
             var ranks = [Playlist]()
             for rank in snapshots {
-                if let playlist = self?.playlists?[rank.key] {
+                if let playlist = self.playlists?[rank.key] {
                     ranks.append(playlist)
                 }
             }
             if ranks.count > 0 {
                 let rankItem = HomeViewModelRankItem()
                 rankItem.ranks = ranks
-                self?.items.append(rankItem)
+                self.rankViewModel[self.items.count] = HomeViewModelRankViewModel(rankItem)
+                self.items.append(rankItem)
             }
-            self?.completion()
+            self.completion()
         }
     }
     
@@ -103,7 +105,7 @@ extension HomeViewModel: UITableViewDataSource {
             }
         case .rank:
             if let cell = tableView.dequeueReusableCell(withIdentifier: RankTableViewCell.identifier, for: indexPath) as? RankTableViewCell {
-                cell.setCollectionViewDataSourceDelegate(HomeViewModelRankViewModel(items[indexPath.section]), forSection: indexPath.section)
+                cell.setCollectionViewDataSourceDelegate(rankViewModel[indexPath.section]!)
                 return cell
             }
         default:
@@ -131,42 +133,5 @@ extension HomeViewModel: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 50
-    }
-}
-
-extension HomeViewModel: UICollectionViewDelegate, UICollectionViewDataSource {
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        let item = items[collectionView.tag]
-        if let rankItem = item as? HomeViewModelRankItem {
-            return rankItem.ranks.count
-        }
-        return 0
-    }
-    
-    func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 1
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let item = items[collectionView.tag]
-        if let rankItem = item as? HomeViewModelRankItem,
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: RankCollectionViewCell.identifier, for: indexPath) as? RankCollectionViewCell {
-            let playlist = rankItem.ranks[indexPath.item]
-            cell.rankLabel.text = String(indexPath.item)
-            cell.titleLabel.text = playlist.title
-            cell.descLabel.text = playlist.desc
-            let imgUrl = URL(string: String(format: "https://img.youtube.com/vi/%@/0.jpg", playlist.videos[0]))
-            DispatchQueue.global().async() {
-                let imageData = try? Data(contentsOf: imgUrl!)
-                DispatchQueue.main.async() {
-                    if imageData != nil, let image = UIImage(data: imageData!) {
-                        cell.thumbnailImageView?.image = image
-                    }
-                }
-            }
-
-            return cell
-        }
-        return UICollectionViewCell()
     }
 }

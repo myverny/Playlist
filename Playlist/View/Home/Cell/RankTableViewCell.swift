@@ -39,10 +39,9 @@ class RankTableViewCell: UITableViewCell {
         return String(describing: self)
     }
 
-    func setCollectionViewDataSourceDelegate<D: UICollectionViewDataSource & UICollectionViewDelegate>(_ dataSourceDelegate: D, forSection section: Int) {
+    func setCollectionViewDataSourceDelegate<D: UICollectionViewDataSource & UICollectionViewDelegate>(_ dataSourceDelegate: D) {
         rankCollectionView.delegate = dataSourceDelegate
         rankCollectionView.dataSource = dataSourceDelegate
-        rankCollectionView.tag = section
         rankCollectionView.setContentOffset(rankCollectionView.contentOffset, animated:false) // Stops collection view if it was scrolling.
         rankCollectionView.reloadData()
 
