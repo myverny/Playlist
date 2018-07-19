@@ -19,8 +19,8 @@ class TagPlaylistsViewController: UIViewController {
             viewModel = TagPlaylistsViewModel(tag, vc: self)
             collectionView.dataSource = viewModel
             if let layout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
-                let height = layout.itemSize.height
-                layout.itemSize = CGSize(width: collectionView.frame.width, height: height)
+                layout.itemSize = CGSize(width: collectionView.frame.width,
+                                         height: RankCollectionViewCell.frameHeight)
             }
         }
     }
