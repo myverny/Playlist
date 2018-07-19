@@ -18,6 +18,8 @@ class RankCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        thumbnailImageView.layer.cornerRadius = thumbnailImageView.frame.width / 4.0
+        thumbnailImageView.layer.masksToBounds = true
     }
 
     static var nib:UINib {
