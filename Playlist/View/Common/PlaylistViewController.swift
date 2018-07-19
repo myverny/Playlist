@@ -8,13 +8,14 @@
 
 import UIKit
 
-class PlaylistViewController: UIViewController, UITableViewDataSource {
+class PlaylistViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     var videos: [String]!
     
     @IBOutlet weak var tableView: UITableView! {
         didSet {
             tableView.dataSource = self
+            tableView.register(PlaylistTableViewCell.nib, forCellReuseIdentifier: PlaylistTableViewCell.identifier)
         }
     }
     
@@ -27,13 +28,11 @@ class PlaylistViewController: UIViewController, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if let cell = tableView.dequeueReusableCell(withIdentifier: PlaylistTableViewCell.identifier, for: indexPath) as? PlaylistTableViewCell {
+            cell.setUp(videoId: videos[indexPath.row])
+            return cell
+        }
         return UITableViewCell()
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
     
 }
