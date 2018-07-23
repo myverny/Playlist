@@ -12,25 +12,61 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="PlaylistTableViewCell" customModule="Playlist" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="260"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="130" id="KGk-i7-Jjw" customClass="PlaylistTableViewCell" customModule="Playlist" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="461" height="130"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="259.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="461" height="129.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="srq-S2-eM5" customClass="YTPlayerView">
-                        <rect key="frame" x="24" y="19" width="272" height="222"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    </view>
+                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="aEc-9t-C4Z">
+                        <rect key="frame" x="5" y="5" width="456" height="120"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="JXk-A8-RnO">
+                                <rect key="frame" x="0.0" y="0.0" width="160" height="120"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="160" id="TK4-eF-yx6"/>
+                                    <constraint firstAttribute="height" constant="120" id="cp5-eH-f40"/>
+                                </constraints>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="6IN-DO-Pgd">
+                                <rect key="frame" x="170" y="0.0" width="81" height="34"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dq1-qq-HWD">
+                                        <rect key="frame" x="0.0" y="0.0" width="81" height="17"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10.0M Views" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lea-yq-qJg">
+                                        <rect key="frame" x="0.0" y="17" width="81" height="17"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="6IN-DO-Pgd" firstAttribute="leading" secondItem="JXk-A8-RnO" secondAttribute="trailing" constant="10" id="OYQ-rk-yZU"/>
+                            <constraint firstAttribute="trailing" secondItem="6IN-DO-Pgd" secondAttribute="trailing" constant="5" id="Uy5-9x-o7F"/>
+                        </constraints>
+                    </stackView>
                 </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="aEc-9t-C4Z" secondAttribute="trailing" id="0CZ-d1-sZs"/>
+                    <constraint firstAttribute="bottom" secondItem="aEc-9t-C4Z" secondAttribute="bottom" constant="5" id="9bj-aE-oWd"/>
+                    <constraint firstItem="aEc-9t-C4Z" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="5" id="QYu-Gh-Ufi"/>
+                    <constraint firstItem="aEc-9t-C4Z" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="vZn-bw-g4T"/>
+                </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
-                <outlet property="ytpView" destination="srq-S2-eM5" id="WRx-82-vSL"/>
+                <outlet property="thumbnailImageView" destination="JXk-A8-RnO" id="09T-Cj-U0s"/>
+                <outlet property="titleLabel" destination="dq1-qq-HWD" id="Imu-2n-F14"/>
+                <outlet property="viewCountLabel" destination="lea-yq-qJg" id="qgG-cA-xFt"/>
             </connections>
-            <point key="canvasLocation" x="28" y="3"/>
+            <point key="canvasLocation" x="70.5" y="-67"/>
         </tableViewCell>
     </objects>
 </document>

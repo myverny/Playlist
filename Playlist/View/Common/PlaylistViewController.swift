@@ -16,6 +16,7 @@ class PlaylistViewController: UIViewController, UITableViewDataSource, UITableVi
         didSet {
             tableView.dataSource = self
             tableView.register(PlaylistTableViewCell.nib, forCellReuseIdentifier: PlaylistTableViewCell.identifier)
+            tableView.estimatedRowHeight = 130
         }
     }
     
@@ -27,9 +28,13 @@ class PlaylistViewController: UIViewController, UITableViewDataSource, UITableVi
         return videos.count
     }
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 130
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: PlaylistTableViewCell.identifier, for: indexPath) as? PlaylistTableViewCell {
-            cell.setUp(videoId: videos[indexPath.row])
+            cell.setUp(videoId: videos[indexPath.row], vc: self)
             return cell
         }
         return UITableViewCell()

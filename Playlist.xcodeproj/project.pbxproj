@@ -30,6 +30,10 @@
 		D7B031EC2100652A004B28EF /* FoundationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7B031EB2100652A004B28EF /* FoundationExtension.swift */; };
 		D7B031EE21006F51004B28EF /* HomeViewModelTodayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7B031ED21006F51004B28EF /* HomeViewModelTodayViewModel.swift */; };
 		D7B031F021007465004B28EF /* TagCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7B031EF21007465004B28EF /* TagCollectionViewCell.xib */; };
+		D7F274652101AE7C0078BE23 /* HttpConn.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7F274642101AE7C0078BE23 /* HttpConn.swift */; };
+		D7F274672101B31D0078BE23 /* VideoInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7F274662101B31D0078BE23 /* VideoInfo.swift */; };
+		D7F2746A210597B00078BE23 /* VideoPlay.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7F27469210597B00078BE23 /* VideoPlay.storyboard */; };
+		D7F2746C210598DB0078BE23 /* VideoPlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7F2746B210598DB0078BE23 /* VideoPlayViewController.swift */; };
 		D82F623A20FD8EB300044708 /* FirebaseConn.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82F623920FD8EB300044708 /* FirebaseConn.swift */; };
 		D82F623C20FDAD4E00044708 /* LeftAlignedCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82F623B20FDAD4E00044708 /* LeftAlignedCollectionViewFlowLayout.swift */; };
 		D82F623E20FDD64E00044708 /* Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82F623D20FDD64E00044708 /* Tag.swift */; };
@@ -96,6 +100,10 @@
 		D7B031EB2100652A004B28EF /* FoundationExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoundationExtension.swift; sourceTree = "<group>"; };
 		D7B031ED21006F51004B28EF /* HomeViewModelTodayViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModelTodayViewModel.swift; sourceTree = "<group>"; };
 		D7B031EF21007465004B28EF /* TagCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TagCollectionViewCell.xib; sourceTree = "<group>"; };
+		D7F274642101AE7C0078BE23 /* HttpConn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpConn.swift; sourceTree = "<group>"; };
+		D7F274662101B31D0078BE23 /* VideoInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoInfo.swift; sourceTree = "<group>"; };
+		D7F27469210597B00078BE23 /* VideoPlay.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = VideoPlay.storyboard; sourceTree = "<group>"; };
+		D7F2746B210598DB0078BE23 /* VideoPlayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlayViewController.swift; sourceTree = "<group>"; };
 		D82F623920FD8EB300044708 /* FirebaseConn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseConn.swift; sourceTree = "<group>"; };
 		D82F623B20FDAD4E00044708 /* LeftAlignedCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftAlignedCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
 		D82F623D20FDD64E00044708 /* Tag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tag.swift; sourceTree = "<group>"; };
@@ -204,6 +212,7 @@
 		D714739A20FC5AF900C63041 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				D7F274682105978E0078BE23 /* VideoPlay */,
 				D844BBE520FF0B9B009DAFCF /* Common */,
 				D8706E9220FC6D5200D553D2 /* Account */,
 				D8706E9320FC6D5D00D553D2 /* History */,
@@ -232,6 +241,7 @@
 			children = (
 				D754F05920FD876400D654B7 /* Playlist.swift */,
 				D82F623D20FDD64E00044708 /* Tag.swift */,
+				D7F274662101B31D0078BE23 /* VideoInfo.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -241,6 +251,7 @@
 			children = (
 				D82F623920FD8EB300044708 /* FirebaseConn.swift */,
 				D844BBFA20FF37D6009DAFCF /* FirebaseConnDelegate.swift */,
+				D7F274642101AE7C0078BE23 /* HttpConn.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -279,6 +290,15 @@
 				D7B031EB2100652A004B28EF /* FoundationExtension.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		D7F274682105978E0078BE23 /* VideoPlay */ = {
+			isa = PBXGroup;
+			children = (
+				D7F27469210597B00078BE23 /* VideoPlay.storyboard */,
+				D7F2746B210598DB0078BE23 /* VideoPlayViewController.swift */,
+			);
+			path = VideoPlay;
 			sourceTree = "<group>";
 		};
 		D844BBE520FF0B9B009DAFCF /* Common */ = {
@@ -435,6 +455,7 @@
 			files = (
 				D714738520FC581A00C63041 /* LaunchScreen.storyboard in Resources */,
 				D8706E9920FC717900D553D2 /* GoogleService-Info.plist in Resources */,
+				D7F2746A210597B00078BE23 /* VideoPlay.storyboard in Resources */,
 				D714738220FC581A00C63041 /* Assets.xcassets in Resources */,
 				D844BC0D21006A75009DAFCF /* Playlist.storyboard in Resources */,
 				D754F05820FC6F9900D654B7 /* home.json in Resources */,
@@ -550,6 +571,7 @@
 				D754F07220FF535A00D654B7 /* TodayTableHeader.swift in Sources */,
 				D82F623C20FDAD4E00044708 /* LeftAlignedCollectionViewFlowLayout.swift in Sources */,
 				D844BC1521008E55009DAFCF /* CenterViewFlowLayout.swift in Sources */,
+				D7F2746C210598DB0078BE23 /* VideoPlayViewController.swift in Sources */,
 				D714737B20FC581700C63041 /* AppDelegate.swift in Sources */,
 				D754F06220FD8D9500D654B7 /* TodayTableViewCell.swift in Sources */,
 				D7B031EE21006F51004B28EF /* HomeViewModelTodayViewModel.swift in Sources */,
@@ -557,10 +579,12 @@
 				D82F623A20FD8EB300044708 /* FirebaseConn.swift in Sources */,
 				D7B031EC2100652A004B28EF /* FoundationExtension.swift in Sources */,
 				D8706EA120FC84EA00D553D2 /* AccountTableViewController.swift in Sources */,
+				D7F274652101AE7C0078BE23 /* HttpConn.swift in Sources */,
 				D8F9334720FCD2E90032696F /* TagCollectionViewCell.swift in Sources */,
 				D754F06820FE15CB00D654B7 /* RankTableViewCell.swift in Sources */,
 				D844BBF020FF161F009DAFCF /* TagPlaylistsViewController.swift in Sources */,
 				D844BC0B21006A67009DAFCF /* PlaylistViewController.swift in Sources */,
+				D7F274672101B31D0078BE23 /* VideoInfo.swift in Sources */,
 				D844BC0321002651009DAFCF /* HomeViewModelItem.swift in Sources */,
 				D8706EA320FC85C800D553D2 /* LoginTableViewCell.swift in Sources */,
 				D82F623E20FDD64E00044708 /* Tag.swift in Sources */,
