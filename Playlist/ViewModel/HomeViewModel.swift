@@ -59,8 +59,10 @@ class HomeViewModel: NSObject, FirebaseConnDelegate {
             guard snapshots.count > 0 else { return }
             var ranks = [Playlist]()
             for rank in snapshots {
-                if let playlist = self.playlists?[rank.key] {
-                    ranks.append(playlist)
+                if let index = Int(rank.key),
+                    let id = rank.value as? String,
+                    let playlist = self.playlists?[id] {
+                    ranks.insert(playlist, at: index - 1)
                 }
             }
             if ranks.count > 0 {

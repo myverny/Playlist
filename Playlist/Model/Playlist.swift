@@ -61,7 +61,10 @@ struct Playlist {
         var videos = [String]()
         let videosSnapshot = snapshot.childSnapshot(forPath: "videos").children
         while let child = videosSnapshot.nextObject() as? DataSnapshot {
-            videos.append(child.key)
+            if let index = Int(child.key),
+                let key = child.value as? String {
+                videos.insert(key, at: index)
+            }
         }
         self.videos = videos
     }
