@@ -36,7 +36,7 @@ class HomeViewModel: NSObject, FirebaseConnDelegate {
         }
     }
     var rankViewModel = [Int: HomeViewModelRankViewModel]()
-    var todayViewModel: HomeViewModelTodayViewModel?
+    var todayViewModel = [Int: HomeViewModelTodayViewModel]()
     
     weak var homevc: UIViewController!
     
@@ -52,7 +52,7 @@ class HomeViewModel: NSObject, FirebaseConnDelegate {
                     switch type {
                     case .today:
                         if let todayItem = HomeViewModelTodayItem(snapshot: snapshot, playlists: self.playlists) {
-                            self.todayViewModel = HomeViewModelTodayViewModel(todayItem, base: self, vc: self.homevc)
+                            self.todayViewModel[self.items.count] = HomeViewModelTodayViewModel(todayItem, base: self, vc: self.homevc)
                             self.items.append(todayItem)
                         }
                     case .rank:
@@ -92,9 +92,9 @@ extension HomeViewModel: UITableViewDataSource {
             if let cell = tableView.dequeueReusableCell(withIdentifier: TodayTableViewCell.identifier, for: indexPath) as? TodayTableViewCell,
                 let todayItem = item as? HomeViewModelTodayItem,
                 let playlist = todayItem.playlist {
-                cell.tagCollectionView.dataSource = self.todayViewModel
+                cell.tagCollectionView.dataSource = self.todayViewModel[indexPath.section]
                 cell.setUp(title: playlist.title, desc: playlist.desc, imgUrl: playlist.imgUrl!, screenSize: tableView.bounds, viewCount: playlist.viewCount, bookmarkCount: playlist.bookmarkCount)
-                cell.delegate = todayViewModel
+                cell.delegate = self.todayViewModel[indexPath.section]
                 return cell
             }
         case .rank:
