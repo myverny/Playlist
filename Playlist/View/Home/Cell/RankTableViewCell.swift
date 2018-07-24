@@ -14,7 +14,7 @@ class RankTableViewCell: UITableViewCell {
             rankCollectionView.register(PlaylistsCollectionViewCell.nib, forCellWithReuseIdentifier: PlaylistsCollectionViewCell.identifier)
             if let layout = rankCollectionView.collectionViewLayout as? UICollectionViewFlowLayout {
 //                let height = layout.itemSize.height
-                layout.itemSize = CGSize(width: rankCollectionView.frame.width,
+                layout.itemSize = CGSize(width: rankCollectionView.frame.width - 30,
                                          height: PlaylistsCollectionViewCell.frameHeight)
             }
         }
