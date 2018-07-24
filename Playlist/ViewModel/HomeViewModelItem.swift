@@ -72,3 +72,35 @@ class HomeViewModelRankItem: HomeViewModelItem {
         self.sectionTitle = snapshot.childSnapshot(forPath: "title").value as? String ?? ""
     }
 }
+
+class HomeViewModelTagItem: HomeViewModelItem {
+    var type: HomeViewModelItemType {
+        return .tag
+    }
+    
+    var sectionTitle: String
+    
+    var rowCount: Int
+    
+    var tags = [Tag]()
+    
+    init?(snapshot: DataSnapshot, tags: [String : Tag]?) {
+        guard let rankSnashots = snapshot.childSnapshot(forPath: "tags").children.allObjects as? [DataSnapshot] else {
+            return nil
+        }
+        
+        var topTags = [Tag]()
+        for tag in rankSnashots {
+            if let topTag = tags?[tag.key] {
+                topTags.append(topTag)
+            }
+        }
+        if topTags.isEmpty {
+            return nil
+        }
+        
+        self.rowCount = topTags.count
+        self.tags = topTags
+        self.sectionTitle = snapshot.childSnapshot(forPath: "title").value as? String ?? ""
+    }
+}

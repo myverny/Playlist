@@ -139,12 +139,15 @@
                 "5": "3",
                 "6": "4"
             }
+        },
+        "3": {
+            "type": "tag",
+            "title": "인기 Tag",
+            "tags": {
+                "14": true,
+                "18": true
+            }
         }
-    },
-
-    "topTags": {
-        "2": true,
-        "8": true
     },
     "playlists": {
         "0": {

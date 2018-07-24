@@ -21,6 +21,7 @@ class HomeViewController: UIViewController {
         // cells
         tableView?.register(TodayTableViewCell.nib, forCellReuseIdentifier: TodayTableViewCell.identifier)
         tableView?.register(RankTableViewCell.nib, forCellReuseIdentifier: RankTableViewCell.identifier)
+        tableView?.register(TagTableViewCell.nib, forCellReuseIdentifier: TagTableViewCell.identifier)
 
         // headers
         tableView?.register(TodayTableHeader.nib, forHeaderFooterViewReuseIdentifier: TodayTableHeader.identifier)

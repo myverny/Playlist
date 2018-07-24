@@ -37,7 +37,8 @@ class HomeViewModel: NSObject, FirebaseConnDelegate {
     }
     var rankViewModel = [Int: HomeViewModelRankViewModel]()
     var todayViewModel = [Int: HomeViewModelTodayViewModel]()
-    
+    var tagViewModel = [Int: HomeViewModelTagViewModel]()
+
     weak var homevc: UIViewController!
     
     private var firebaseConn = FirebaseConn()
@@ -60,8 +61,11 @@ class HomeViewModel: NSObject, FirebaseConnDelegate {
                             self.rankViewModel[self.items.count] = HomeViewModelRankViewModel(rankItem, vc: self.homevc)
                             self.items.append(rankItem)
                         }
-                    default:
-                        break
+                    case .tag:
+                        if let tagItem = HomeViewModelTagItem(snapshot: snapshot, tags: self.tags) {
+                            self.tagViewModel[self.items.count] = HomeViewModelTagViewModel(tagItem, base: self, vc: self.homevc)
+                            self.items.append(tagItem)
+                        }
                     }
                 }
             }
@@ -102,8 +106,14 @@ extension HomeViewModel: UITableViewDataSource {
                 cell.setCollectionViewDataSourceDelegate(rankViewModel[indexPath.section]!)
                 return cell
             }
-        default:
-            return UITableViewCell()
+        case .tag:
+            if let cell = tableView.dequeueReusableCell(withIdentifier: TagTableViewCell.identifier, for: indexPath) as? TagTableViewCell,
+                let tagItem = item as? HomeViewModelTagItem {
+                let tag = tagItem.tags[indexPath.item]
+                cell.setCollectionViewDataSourceDelegate(tagViewModel[indexPath.section]!, forRow: indexPath.item)
+                cell.setUp(title: tag.name)
+                return cell
+            }
         }
         return UITableViewCell()
     }
@@ -113,19 +123,39 @@ extension HomeViewModel: UITableViewDelegate {
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let item = items[section]
         switch item.type {
-        case .today, .rank:
+        case .today, .rank, .tag:
             if let view = tableView.dequeueReusableHeaderFooterView(withIdentifier: TodayTableHeader.identifier) as? TodayTableHeader {
                 view.titleLabel.text = item.sectionTitle
                 return view
             }
-            
+            /*
         default:
-            return UIView()
+            let headerView = UIView()
+            headerView.backgroundColor = UIColor.clear
+            return headerView*/
         }
         return UIView()
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 50
+        let item = items[section]
+        switch item.type {
+        case .today, .rank, .tag:
+            return 50
+        //default:
+//            return 0
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        let footerView = UIView()
+        let footerChildView = UIView(frame: CGRect(x: 60, y: 0, width: tableView.frame.width - 60, height: 1))
+        footerChildView.backgroundColor = UIColor.clear
+        footerView.addSubview(footerChildView)
+        return footerView
     }
 }

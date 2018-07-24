@@ -31,13 +31,13 @@ class HomeViewModelTodayViewModel: NSObject, UICollectionViewDataSource {
         }
         return 0
     }
-    
+
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if let todayItem = item as? HomeViewModelTodayItem,
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TagCollectionViewCell.identifier, for: indexPath) as? TagCollectionViewCell,
             let tagId = todayItem.playlist?.tags[indexPath.item],
             let tag = base.tags?[tagId] {
-                cell.setUp(tag: tag, vc: vc)
+            cell.setUp(tag: tag, vc: vc)
             return cell
         }
         return UICollectionViewCell()
