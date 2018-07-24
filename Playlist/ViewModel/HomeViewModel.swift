@@ -100,6 +100,7 @@ extension HomeViewModel: UITableViewDataSource {
                 let playlist = todayItem.playlist {
                 cell.tagCollectionView.dataSource = self.todayViewModel
                 cell.setUp(title: playlist.title, desc: playlist.desc, imgUrl: playlist.imgUrl!, screenSize: tableView.bounds, viewCount: playlist.viewCount, bookmarkCount: playlist.bookmarkCount)
+                cell.delegate = todayViewModel
                 return cell
             }
         case .rank:

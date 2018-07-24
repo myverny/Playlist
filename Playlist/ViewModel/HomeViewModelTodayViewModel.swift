@@ -43,3 +43,14 @@ class HomeViewModelTodayViewModel: NSObject, UICollectionViewDataSource {
         return UICollectionViewCell()
     }
 }
+
+extension HomeViewModelTodayViewModel: HomeViewCellDelegate {
+    func touchCell(sender: UITapGestureRecognizer) {
+        let storyboard = UIStoryboard(name: "Playlist", bundle: nil)
+        if let pvc = storyboard.instantiateInitialViewController() as? PlaylistViewController,
+            let todayItem = item as? HomeViewModelTodayItem {
+            pvc.videos = todayItem.playlist?.videos
+            vc.show(pvc, sender: sender)
+        }
+    }
+}

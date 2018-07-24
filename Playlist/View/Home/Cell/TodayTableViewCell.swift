@@ -26,6 +26,20 @@ class TodayTableViewCell: UITableViewCell {
         }
     }
     
+    var delegate: HomeViewCellDelegate?
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(touchCell))
+        addGestureRecognizer(tapGestureRecognizer)
+        
+    }
+  
+    @objc func touchCell(sender: UITapGestureRecognizer) {
+        delegate?.touchCell(sender: sender)
+    }
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
@@ -55,4 +69,8 @@ class TodayTableViewCell: UITableViewCell {
     static var identifier: String {
         return String(describing: self)
     }
+}
+
+protocol HomeViewCellDelegate {
+    func touchCell(sender: UITapGestureRecognizer)
 }
