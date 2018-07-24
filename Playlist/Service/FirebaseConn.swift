@@ -16,6 +16,7 @@ class FirebaseConn {
     static var playlistsPath = FirebaseConn.ref.child("data/playlists")
     static var todayPath = FirebaseConn.ref.child("data/today")
     static var rankPath = FirebaseConn.ref.child("data/rank")
+    static var homePath = FirebaseConn.ref.child("data/home")
 
     func getData(from childRef: DatabaseReference, completion: @escaping ([DataSnapshot]) -> Void) {
         let key = childRef.key

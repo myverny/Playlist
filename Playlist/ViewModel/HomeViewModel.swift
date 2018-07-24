@@ -10,10 +10,10 @@ import Foundation
 import UIKit
 import FirebaseDatabase
 
-enum HomeViewModelItemType {
-    case today
-    case rank
-    case tag
+enum HomeViewModelItemType: String {
+    case today = "today"
+    case rank = "rank"
+    case tag = "tag"
 }
 
 typealias CompletionHandler = (() -> Void)
@@ -44,32 +44,26 @@ class HomeViewModel: NSObject, FirebaseConnDelegate {
     private var completion: CompletionHandler!
     
     private func prepareData() {
-        firebaseConn.getData(from: FirebaseConn.todayPath) { snapshots in
+        firebaseConn.getData(from: FirebaseConn.homePath) { snapshots in
             guard snapshots.count > 0 else { return }
-            let todayData = snapshots[0]
-            if let todayPlaylist = self.playlists?[todayData.key] {
-                let todayItem = HomeViewModelTodayItem(playlist: todayPlaylist)
-                self.todayViewModel = HomeViewModelTodayViewModel(todayItem, base: self, vc: self.homevc)
-                self.items.append(todayItem)
-                self.completion()
-            }
-        }
-        
-        firebaseConn.getData(from: FirebaseConn.rankPath) { snapshots in
-            guard snapshots.count > 0 else { return }
-            var ranks = [Playlist]()
-            for rank in snapshots {
-                if let index = Int(rank.key),
-                    let id = rank.value as? String,
-                    let playlist = self.playlists?[id] {
-                    ranks.insert(playlist, at: index - 1)
+            for snapshot in snapshots {
+                if let value = snapshot.childSnapshot(forPath: "type").value as? String,
+                    let type = HomeViewModelItemType(rawValue: value) {
+                    switch type {
+                    case .today:
+                        if let todayItem = HomeViewModelTodayItem(snapshot: snapshot, playlists: self.playlists) {
+                            self.todayViewModel = HomeViewModelTodayViewModel(todayItem, base: self, vc: self.homevc)
+                            self.items.append(todayItem)
+                        }
+                    case .rank:
+                        if let rankItem = HomeViewModelRankItem(snapshot: snapshot, playlists: self.playlists) {
+                            self.rankViewModel[self.items.count] = HomeViewModelRankViewModel(rankItem, vc: self.homevc)
+                            self.items.append(rankItem)
+                        }
+                    default:
+                        break
+                    }
                 }
-            }
-            if ranks.count > 0 {
-                let rankItem = HomeViewModelRankItem()
-                rankItem.ranks = ranks
-                self.rankViewModel[self.items.count] = HomeViewModelRankViewModel(rankItem, vc: self.homevc)
-                self.items.append(rankItem)
             }
             self.completion()
         }
