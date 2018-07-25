@@ -33,8 +33,9 @@ class TagTableViewCell: UITableViewCell {
         return String(describing: self)
     }
     
-    func setCollectionViewDataSourceDelegate(_ dataSourceDelegate: UICollectionViewDataSource, forRow: Int) {
+    func setCollectionViewDataSourceDelegate<D: UICollectionViewDataSource & UICollectionViewDelegate>(_ dataSourceDelegate: D, forRow: Int) {
         playlistCollectionView.dataSource = dataSourceDelegate
+        playlistCollectionView.delegate = dataSourceDelegate
         playlistCollectionView.setContentOffset(playlistCollectionView.contentOffset, animated:false) // Stops collection view if it was scrolling.
         playlistCollectionView.tag = forRow
         playlistCollectionView.reloadData()

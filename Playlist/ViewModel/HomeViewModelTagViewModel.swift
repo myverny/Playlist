@@ -19,7 +19,7 @@ import Foundation
 import Foundation
 import UIKit
 
-class HomeViewModelTagViewModel: NSObject, UICollectionViewDataSource {
+class HomeViewModelTagViewModel: NSObject, UICollectionViewDataSource, UICollectionViewDelegate {
     private var item: HomeViewModelTagItem!
     private var base: HomeViewModel!
     private weak var vc: UIViewController!
@@ -50,10 +50,23 @@ class HomeViewModelTagViewModel: NSObject, UICollectionViewDataSource {
         }
         return UICollectionViewCell()
     }
+
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let storyboard = UIStoryboard(name: "Playlist", bundle: nil)
+        if let pvc = storyboard.instantiateInitialViewController() as? PlaylistViewController {
+            let playlistId = item.tags[collectionView.tag].playlists[indexPath.item]
+            guard let playlist = base.playlists![playlistId] else {
+                return
+            }
+            pvc.videos = playlist.videos
+            vc.show(pvc, sender: vc)
+        }
+    }
     /*
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 
     }*/
 }
+
 
