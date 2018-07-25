@@ -17,9 +17,7 @@ class VideoPlayViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        //playView.load(withPlaylistId: videoId)
-        playView.load(withPlaylistId: videoId)
+        playView.load(withVideoId: videoId, playerVars: ["origin":"http://www.youtube.com"])
     }
 
     override func didReceiveMemoryWarning() {

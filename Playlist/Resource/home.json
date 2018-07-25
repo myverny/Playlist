@@ -115,18 +115,36 @@
             "playlists": {
                 "5": true
             }
+        },
+        "19": {
+            "name": "앱리뷰",
+            "playlists": {
+                "6": true
+            }
+        },
+        "20": {
+            "name": "엘렌",
+            "playlists": {
+                "6": true
+            }
+        },
+        "21": {
+            "name": "도른자",
+            "playlists": {
+                "6": true
+            }
         }
     },
     "home": {
         "0": {
             "type": "today",
             "title": "오늘의 추천",
-            "playlist": "5"
+            "playlist": "6"
         },
         "1": {
             "type": "today",
             "title": "최고 조회수",
-            "playlist": "4"
+            "playlist": "5"
         },
         "2": {
             "type": "rank",
@@ -144,7 +162,7 @@
             "type": "tag",
             "title": "인기 Tag",
             "tags": {
-                "14": true,
+                "21": true,
                 "18": true
             }
         }
@@ -267,6 +285,20 @@
             "tags": {
                 "17": true,
                 "18": true
+            }
+        },
+        "6": {
+            "title": "도른자 앱 리뷰",
+            "desc": "디자이너 엘렌의 솔직!신랄!한 앱 리뷰",
+            "viewCount": 19130471,
+            "bookmakrCount": 2038,
+            "videos": {
+                "0": "6b6tjtcZQE0"
+            },
+            "tags": {
+                "19": true,
+                "20": true,
+                "21": true
             }
         }
     }

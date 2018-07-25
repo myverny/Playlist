@@ -29,6 +29,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="Qk4-f6-9UJ" firstAttribute="leading" secondItem="Rx1-6p-NFt" secondAttribute="leading" id="ThP-C8-NNl"/>
+                            <constraint firstItem="Qk4-f6-9UJ" firstAttribute="width" secondItem="rXe-Mr-iZw" secondAttribute="width" id="UXM-Gu-yRM"/>
                             <constraint firstItem="Rx1-6p-NFt" firstAttribute="top" secondItem="Qk4-f6-9UJ" secondAttribute="top" id="s32-sC-PFW"/>
                             <constraint firstItem="Rx1-6p-NFt" firstAttribute="trailing" secondItem="Qk4-f6-9UJ" secondAttribute="trailing" id="v9H-CV-HUz"/>
                         </constraints>
