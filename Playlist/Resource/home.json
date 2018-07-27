@@ -133,6 +133,18 @@
             "playlists": {
                 "6": true
             }
+        },
+        "22": {
+            "name": "마스터쉐프",
+            "playlists": {
+                "7": true
+            }
+        },
+        "23": {
+            "name": "요리",
+            "playlists": {
+                "7": true
+            }
         }
     },
     "home": {
@@ -144,7 +156,7 @@
         "1": {
             "type": "today",
             "title": "최고 조회수",
-            "playlist": "5"
+            "playlist": "7"
         },
         "2": {
             "type": "rank",
@@ -300,6 +312,35 @@
                 "20": true,
                 "21": true
             }
+        },
+        "7": {
+            "title": "마스터쉐프 US 시즌 4",
+            "desc": "마스터쉐프 US 시즌 4 동영상 모음입니다",
+            "viewCount": 135,
+            "bookmakrCount": 1,
+            "videos": {
+                "0": "yMt5zT_8C20",
+                "1": "wXQ_R-fUE4M",
+                "2": "JP4c08HePlk",
+                "3": "JxZDeHPDBKU",
+                "4": "epauSsYkJ2A",
+                "5": "2rYDz6Pj8uk",
+                "6": "Vs9_ZYfgGeM",
+                "7": "D5zc32b-2Pk",
+                "8": "9LTsHldsqiU",
+                "9": "3t9PnhfF5Eo",
+                "10": "_LsUdKMBeuk",
+                "11": "tlfP7IPleUg",
+                "12": "j9Kj9_og9tQ",
+                "13": "5j-xu88ITC4",
+                "14": "04ii2OEwCww",
+                "15": "QC3A2Idvra0"
+            },
+            "tags": {
+                "22": true,
+                "23": true
+            }
+            
         }
     }
 }

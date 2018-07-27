@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -19,24 +20,48 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qk4-f6-9UJ" customClass="YTPlayerView">
-                                <rect key="frame" x="0.0" y="20" width="375" height="220"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="211"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bke-bC-PkN">
+                                        <rect key="frame" x="0.5" y="0.0" width="375" height="211"/>
+                                        <state key="normal" image="icons8-circled-play-50"/>
+                                        <connections>
+                                            <action selector="onPlayControlButtonTouched:" destination="UW8-lE-L6I" eventType="touchUpInside" id="Dvh-0E-1r7"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="220" id="GYf-jc-NWF"/>
+                                    <constraint firstItem="Bke-bC-PkN" firstAttribute="height" secondItem="Qk4-f6-9UJ" secondAttribute="height" id="75H-rB-Hpm"/>
+                                    <constraint firstItem="Bke-bC-PkN" firstAttribute="centerY" secondItem="Qk4-f6-9UJ" secondAttribute="centerY" id="M1I-2g-vAb"/>
+                                    <constraint firstAttribute="width" secondItem="Qk4-f6-9UJ" secondAttribute="height" multiplier="16:9" id="SA6-pw-NJz"/>
+                                    <constraint firstItem="Bke-bC-PkN" firstAttribute="centerX" secondItem="Qk4-f6-9UJ" secondAttribute="centerX" id="izL-Vm-rbD"/>
+                                    <constraint firstItem="Bke-bC-PkN" firstAttribute="width" secondItem="Qk4-f6-9UJ" secondAttribute="width" id="u5N-fb-cIe"/>
                                 </constraints>
                             </view>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="RIT-ii-sw2">
+                                <rect key="frame" x="3" y="239" width="369" height="31"/>
+                                <connections>
+                                    <action selector="onSliderChange:" destination="UW8-lE-L6I" eventType="valueChanged" id="KWO-34-TOc"/>
+                                </connections>
+                            </slider>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="RIT-ii-sw2" firstAttribute="leading" secondItem="Rx1-6p-NFt" secondAttribute="leading" constant="5" id="7t2-N0-yQa"/>
+                            <constraint firstItem="RIT-ii-sw2" firstAttribute="top" secondItem="Qk4-f6-9UJ" secondAttribute="bottom" constant="8" id="Tew-U3-Ip5"/>
                             <constraint firstItem="Qk4-f6-9UJ" firstAttribute="leading" secondItem="Rx1-6p-NFt" secondAttribute="leading" id="ThP-C8-NNl"/>
                             <constraint firstItem="Qk4-f6-9UJ" firstAttribute="width" secondItem="rXe-Mr-iZw" secondAttribute="width" id="UXM-Gu-yRM"/>
+                            <constraint firstItem="Rx1-6p-NFt" firstAttribute="trailing" secondItem="RIT-ii-sw2" secondAttribute="trailing" constant="5" id="lIf-Mf-jZf"/>
                             <constraint firstItem="Rx1-6p-NFt" firstAttribute="top" secondItem="Qk4-f6-9UJ" secondAttribute="top" id="s32-sC-PFW"/>
                             <constraint firstItem="Rx1-6p-NFt" firstAttribute="trailing" secondItem="Qk4-f6-9UJ" secondAttribute="trailing" id="v9H-CV-HUz"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Rx1-6p-NFt"/>
                     </view>
                     <connections>
+                        <outlet property="playControlButton" destination="Bke-bC-PkN" id="wEV-Lk-GuJ"/>
                         <outlet property="playView" destination="Qk4-f6-9UJ" id="SRR-KM-4Au"/>
+                        <outlet property="slider" destination="RIT-ii-sw2" id="CIv-Xq-qIL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="klw-Tj-c3u" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -44,4 +69,7 @@
             <point key="canvasLocation" x="256.80000000000001" y="177.66116941529236"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="icons8-circled-play-50" width="50" height="50"/>
+    </resources>
 </document>
